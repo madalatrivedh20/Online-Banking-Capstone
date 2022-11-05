@@ -1,0 +1,103 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "firstname": "Leanne Graham",
+        "lastname": "Leanne Graham",
+        "acctype": "Savings",
+        "accno": "1023456",
+        "email": "Sincere@april.biz",
+        "password": "Bret"
+      },
+      {
+        "id": 2,
+        "firstname": "Ervin Howell",
+        "lastname": "Ervin Howell",
+        "acctype": "Savings",
+        "accno": "1023457",
+        "email": "Shanna@melissa.tv",
+        "password": "Antonette"
+      },
+      {
+        "id": 3,
+        "firstname": "Clementine Bauch",
+        "lastname": "Clementine Bauch",
+        "acctype": "Savings",
+        "accno": "1023458",
+        "email": "Nathan@yesenia.net",
+        "password": "Samantha"
+      },
+      {
+        "id": 4,
+        "firstname": "Patricia Lebsack",
+        "lastname": "Patricia Lebsack",
+        "acctype": "Savings",
+        "accno": "1023459",
+        "email": "Julianne.OConner@kory.org",
+        "password": "Karianne"
+      },
+      {
+        "id": 5,
+        "firstname": "Chelsey Dietrich",
+        "lastname": "Chelsey Dietrich",
+        "acctype": "Savings",
+        "accno": "1023460",
+        "email": "Lucio_Hettinger@annie.ca",
+        "password": "Kamren"
+      },
+      {
+        "id": 6,
+        "firstname": "Mrs. Dennis Schulist",
+        "lastname": "Mrs. Dennis Schulist",
+        "acctype": "Savings",
+        "accno": "1023461",
+        "email": "Karley_Dach@jasper.info",
+        "password": "Leopoldo_Corkery"
+      },
+      {
+        "id": 7,
+        "firstname": "Kurtis Weissnat",
+        "lastname": "Kurtis Weissnat",
+        "acctype": "Savings",
+        "accno": "1023462",
+        "email": "Telly.Hoeger@billy.biz",
+        "password": "Elwyn.Skiles"
+      },
+      {
+        "id": 8,
+        "firstname": "Nicholas Runolfsdottir V",
+        "lastname": "Nicholas Runolfsdottir V",
+        "acctype": "Savings",
+        "accno": "1023463",
+        "email": "Sherwood@rosamond.me",
+        "password": "Maxime_Nienow"
+      },
+      {
+        "id": 9,
+        "firstname": "Glenna Reichert",
+        "lastname": "Glenna Reichert",
+        "acctype": "Savings",
+        "accno": "1023464",
+        "email": "Chaim_McDermott@dana.io",
+        "password": "Delphine"
+      },
+      {
+        "id": 10,
+        "firstname": "Clementina DuBuque",
+        "lastname": "Clementina DuBuque",
+        "acctype": "Savings",
+        "accno": "1023465",
+        "email": "Rey.Padberg@karina.biz",
+        "password": "Moriah.Stanton"
+      },
+      {
+        "firstname": "Trivedh",
+        "lastname": "Madala",
+        "acctype": "current",
+        "accno": "6474930",
+        "email": "madalatrivedh@gmail.com",
+        "password": "hoi",
+        "id": 11
+      }
+    ]
+  }

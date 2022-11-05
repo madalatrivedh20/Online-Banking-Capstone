@@ -14,12 +14,11 @@ const FormHeader = props => (
     </div>
 );
 
-
-function LoginForm()
+function Login()
 {
 
     const [data,setData] = useState({
-        username:"",
+        email:"",
         password:""
       })
     const [message,setMessage]=useState("");
@@ -38,7 +37,7 @@ function LoginForm()
         try {
             const response = await fetch("http://localhost:3000/users/") ;
             const jsonData = await response.json();
-            console.log(jsonData);
+            /* console.log(jsonData); */
             localStorage.setItem("users",JSON.stringify(jsonData));
           } catch (error) {
             console.log(error.message);
@@ -54,13 +53,13 @@ function LoginForm()
         const submitHandler = e => {
 
         e.preventDefault();
-        let username_str=data['username'][0];
+        let email_str=data['email'][0];
         let password_str=data['password'][0];
-        let checkemail=(validator.isEmail(username_str))
+        let checkemail=(validator.isEmail(email_str))
         function checkemailpassofuser(obj)
         {
          let flag=0
-         if(obj.email===username_str && obj.password===password_str)
+         if(obj.email===email_str && obj.password===password_str)
          {
             flag=1
          }
@@ -77,16 +76,16 @@ function LoginForm()
         if(checkemail)
         {
           const result = users.filter(checkemailpassofuser);
-          console.log("result",result);
+          /* console.log("result",result); */
           if(result[0])
           {
-          alert("Welcome" + " " +result[0].name)
-          console.log("Welcome");
+          alert("Welcome" + " " +result[0].firstname)
+         /*  console.log("Welcome"); */
           } 
           else
           {
           alert("Wrong credentials");
-          console.log("Wrong credentials");
+          /* console.log("Wrong credentials"); */
           }
         }
         }
@@ -98,7 +97,7 @@ function LoginForm()
             <form onSubmit={submitHandler}>
             <div class="row">
             <label>Email</label>
-            <input required type="text" name="username" placeholder="Enter your Email" value={data.username} onChange={changeHandler}/>
+            <input required type="text" name="email" placeholder="Enter your Email" value={data.email} onChange={changeHandler}/>
         </div>  
         <div class="row">
             <label>Password</label>
@@ -128,7 +127,7 @@ function LoginForm()
     )
   }
   
-  export default LoginForm;
+  export default Login;
 
 
 

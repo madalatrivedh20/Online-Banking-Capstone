@@ -1,15 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
-import SignIn from './components/Login';
-import Register from './components/Register';
-import LoginForm from './components/Loginboot';
-import Logintry from './components/Logintry';
-import RegistrationForm from './components/Register';
+import Login from './components/Login';
+import Registration from './components/Registration';
 
 function App() {
   return (
     <div className="App">
-    <Logintry/>
+      <Login/>
+    <Registration/>
    
     </div>
   );

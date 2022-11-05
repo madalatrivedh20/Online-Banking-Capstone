@@ -6,8 +6,39 @@ body{
   font-family: "work sans";
 }
 
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+.columns {
+  display: grid;
+  grid-template-columns: 50% 50%;	
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 html{
-  font-size: 100%;
+  font-size: 80%;
 }
 .container {
     padding: 16px;
@@ -17,7 +48,7 @@ html{
   max-width: 500px;
   min-width: 300px;
   max-height: 800px;
-  width: 30%;
+  width: 800px;
   height: 1000%;
   margin: 100px auto;
   background-color: #FFFFFF;
@@ -68,7 +99,7 @@ html{
   box-sizing: border-box;
 	border: none;
   font-size: 1.3rem;
-  padding-left: 1.5rem;
+  padding-left: 1 rem;
   padding-bottom: 1rem;
   box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
   transition: box-shadow 0.2s ease-in;
@@ -118,7 +149,7 @@ html{
   padding-bottom: 1.5rem;
 }
 
-#facebookIcon{
+/* #facebookIcon{
   background-image:      url("https://image.flaticon.com/icons/svg/145/145802.svg");
   background-repeat: no-repeat;
   width: 3rem;
@@ -137,7 +168,7 @@ html{
   background-repeat: no-repeat;
   width: 3rem;
   height: 3rem;
-}
+} */
 
 #iconGroup{
   display: flex;
