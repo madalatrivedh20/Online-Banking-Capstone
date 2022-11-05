@@ -1,24 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Login from './components/Login';
+import Register from './components/Register';
+import Home from './components/Home';
+import BalanceAndHistory from './components/BalanceAndHistory';
+import ChangePin from './components/ChangePin';
+import Navbar from './components/Navbar';
+import NewFD from './components/NewFD';
+import RequestChequebook from './components/RequestChequebook';
+import TransferFunds from './components/TransferFunds';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/changepin" element={<ChangePin />} />
+        <Route exact path="/newfd" element={<NewFD />} />
+        <Route exact path="/transferfunds" element={<TransferFunds />} />
+        <Route exact path="/balance" element={<BalanceAndHistory />} />
+      </Routes>
+    </Router>
   );
 }
 
