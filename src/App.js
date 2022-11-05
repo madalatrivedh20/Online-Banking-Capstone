@@ -1,8 +1,8 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 import Login from './components/Login';
-import Register from './components/Register';
+import Registration from './components/Registration';
 import Home from './components/Home';
 import BalanceAndHistory from './components/BalanceAndHistory';
 import ChangePin from './components/ChangePin';
@@ -20,16 +20,25 @@ import {
 
 function App() {
   return (
+    <div>
     <Router>
       <Routes>
+      <Route exact path="/" element={<Login />} />
+      {/* <Route exact path="/" element={<Home />} /> */}
+      
         <Route exact path="/login" element={<Login />} />
-        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/register" element={<Registration />} />
         <Route exact path="/changepin" element={<ChangePin />} />
         <Route exact path="/newfd" element={<NewFD />} />
         <Route exact path="/transferfunds" element={<TransferFunds />} />
         <Route exact path="/balance" element={<BalanceAndHistory />} />
       </Routes>
-    </Router>
+    </Router> 
+  
+
+    </div>
+
+  
   );
 }
 
