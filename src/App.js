@@ -21,24 +21,25 @@ import {
 function App() {
   return (
     <div>
-    <Router>
-      <Routes>
-      <Route exact path="/" element={<Login />} />
-      {/* <Route exact path="/" element={<Home />} /> */}
-      
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/register" element={<Registration />} />
-        <Route exact path="/changepin" element={<ChangePin />} />
-        <Route exact path="/newfd" element={<NewFD />} />
-        <Route exact path="/transferfunds" element={<TransferFunds />} />
-        <Route exact path="/balance" element={<BalanceAndHistory />} />
-      </Routes>
-    </Router> 
-  
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Login />} />
+          {/* <Route exact path="/" element={<Home />} /> */}
+
+          {/* <Route exact path="/login" element={<Login />} /> */}
+          <Route exact path="/register" element={<Registration />} />
+          <Route exact path="/changepin" element={<ChangePin />} />
+          <Route exact path="/newfd" element={<NewFD />} />
+          <Route exact path="/transferfunds" element={<TransferFunds />} />
+          <Route exact path="/balance" element={<BalanceAndHistory />} />
+          <Route exact path="/requestcheckbook" element={<RequestChequebook />} />
+        </Routes>
+      </Router>
+
 
     </div>
 
-  
+
   );
 }
 
