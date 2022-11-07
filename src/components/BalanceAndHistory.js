@@ -32,6 +32,7 @@ const rows = [
 
 const BalanceAndHistory = () => {
   const { user } = useAuth();
+  console.log("transactions",user.transactions)
   return (
     <Box>
       <Typography variant="h3" align="center">
@@ -48,7 +49,7 @@ const BalanceAndHistory = () => {
           label="Account Number"
           variant="standard"
           disabled
-          value={user.accountNo}
+          value={user.accountno}
           sx={{ display: 'block' }}
         />
         <TextField
@@ -59,6 +60,7 @@ const BalanceAndHistory = () => {
           sx={{ display: 'block' }}
         />
       </Grid>
+      
 
       <Grid container
         direction="column"
@@ -77,6 +79,18 @@ const BalanceAndHistory = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
+
+                {user.transactions.length==0 && (
+                  <TableRow
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row"> No Transactions to show
+                  </TableCell>
+                  <TableCell align="right">{""}</TableCell>
+                  <TableCell align="right">{""}</TableCell>
+                  <TableCell align="right">{""}</TableCell>
+                </TableRow>
+                )} : 
                 {user.transactions.map((row) => (
                   <TableRow
                     key={row.id}

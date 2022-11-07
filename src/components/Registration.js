@@ -2,6 +2,8 @@ import '../style/Login.css';
 import { React, useState, useEffect } from 'react';
 import validator from 'validator';
 import pic from '../style/img_avatar2.png';
+import { toast } from 'react-toastify';
+import { Link, useNavigate } from 'react-router-dom';
 
 const FormHeader = props => (
   <div>
@@ -13,17 +15,20 @@ const FormHeader = props => (
 );
 
 function Registration() {
-
+  
+  const navigate = useNavigate();
   const [data, setData] = useState({
     firstname: "",
-    lastname: "",
     acctype: "",
     accno: "",
     email: "",
     password: "",
-    repassword: ""
+    repassword: "",
+    sectype : "",
+    secans : "",
+    transactions:[],
+    balance : "30000$"
   })
-  const [message, setMessage] = useState("");
   const checkemail = ''
 
   const { username, password } = data;
@@ -54,6 +59,12 @@ function Registration() {
   const submitHandler = e => {
 
     e.preventDefault();
+    if (!validator.isAlpha(data['firstname'][0])) return toast.error("Invalid Firsname");
+    if (!validator.isAlpha(data['secans'][0])) return toast.error("Invalid Answer");
+    if (!validator.isAlpha(data['acctype'][0])) return toast.error("Invalid Account type");
+    if (!validator.isNumeric(data['accno'][0])) return toast.error("Invalid Account Number");
+    if (!validator.isEmail(data['email'][0])) return toast.error("Please enter a valid Email");
+ 
     let email_str = data['email'][0];
     let password_str = data['password'][0];
     let repassword_str=data['repassword'][0];
@@ -62,7 +73,7 @@ function Registration() {
 
     
     if (!checkemail) {
-      setMessage("Please enter a valid Email");
+      return toast.error("Please enter a valid Email");
 
     }
     
@@ -72,19 +83,20 @@ function Registration() {
         const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 'firstname': data['firstname'][0], 'lastname': data['lastname'][0],'acctype':data['acctype'][0],
-        'accno':data['accno'][0],'email':data['email'][0],'password':data['password'][0]
+        body: JSON.stringify({ 'firstname': data['firstname'][0] /* 'lastname': data['lastname'][0] */,'acctype':data['acctype'][0],
+        'accno':data['accno'][0],'email':data['email'][0],'password':data['password'][0],'sectype':data['sectype'][0],'secans':data['secans'][0],'transactions':[],'balance':'30000$'
        })
     };
     fetch('http://localhost:3000/users/', requestOptions)
         .then(response => response.json())
         .then(data=>console.log(data));
-    alert("Registered succesfully")
+        toast.success("Registered Successfully")
+        navigate('/login');
 
-    
+     
   }
   else{
-    alert("Passwords doesnt match")
+    return toast.error("Passwords doesnt match");
   }
 }
   }
@@ -100,17 +112,38 @@ function Registration() {
             <div class="column-1">
               <div className="row">
                 <label>First Name</label>
-                <input required type="text" name="firstname" placeholder="Enter your First Nmae" value={data.firstname} onChange={changeHandler} />
+                <input required type="text" name="firstname" placeholder="Enter your First Name" value={data.firstname} onChange={changeHandler} />
               </div>
 
-              <div className="row">
+              {/* <div className="row">
                 <label>Last Name</label>
                 <input required type="text" name="lastname" placeholder="Enter your Last Name" value={data.lastname} onChange={changeHandler} />
-              </div>
+              </div> */}
 
               <div className="row">
                 <label>Account Type</label>
-                <input required type="text" name="acctype" placeholder="Enter your Account type" value={data.acctype} onChange={changeHandler} />
+                
+                <select name="acctype" required value={data.acctype} onChange={changeHandler}>
+                  <option value={"None"}>None</option>
+                  <option value={"Current"}>Current</option>
+                  <option value={"Saving"}>Savings</option>
+                </select>
+               
+              </div>
+
+              <div className="row">
+                <label>Security Question Type</label>
+                
+                <select name="sectype" required value={data.sectype} onChange={changeHandler}>
+                  <option value={"In what city were you born?"}>In what city were you born</option>
+                  <option value={"What is the name of your favorite pet?"}>What is the name of your favorite pet?</option>
+                  <option value={"What high school did you attend?"}>What high school did you attend?</option>
+                </select>
+               
+              </div>
+              <div className="row">
+                <label>Security Question Answer</label>
+                <input required type="text" name="secans" placeholder="Enter your Security Question Answer" value={data.secans} onChange={changeHandler} />
               </div>
             </div>
 
@@ -132,25 +165,16 @@ function Registration() {
                 <label>Re-enter your Password</label>
                 <input required type="password" name="repassword" placeholder="Re-Enter your Password" value={data.repassword} onChange={changeHandler} />
               </div>
+
+             
             </div>
           </div>
           <div id="button" className="row">
-            <button>Log In</button>
+            <button>Register</button>
 
           </div>
         </form>
 
-      </div>
-
-      {!checkemail > 0 &&
-        <div id="message">
-          {message}
-        </div>
-
-      }
-
-      <div className="container" style={{ "backgroundColor": "#f1f1f1", "height": "50px" }}>
-        New User ? <a href="#">Register Here</a>
       </div>
 
 

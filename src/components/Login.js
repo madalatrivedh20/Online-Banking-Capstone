@@ -124,7 +124,7 @@ function Login() {
       }
 
       <div className="container" style={{ "backgroundColor": "#f1f1f1", "height": "50px" }}>
-        New User ? <a href="#">Register Here</a>
+        New User ? <a href="/register">Register Here</a>
       </div>
 
 

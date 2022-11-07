@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import '../style/Home.css';
+
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const menuRef = useRef();
