@@ -6,19 +6,7 @@
       "lastname": "Leanne Graham",
       "acctype": "Savings",
       "accno": "1023456",
-      "email": "Sincere@april.biz",
-      "password": "Bret"
-    },
-    {
-      "id": 2,
-      "firstname": "Ervin Howell",
-      "lastname": "Ervin Howell",
-      "acctype": "Savings",
-      "accno": "1023457",
-      "email": "Shanna@melissa.tv",
-      "password": "Antonette",
       "balance": "5344",
-      "accountNo": "938571097",
       "transactions": [
         {
           "id": "1",
@@ -38,7 +26,43 @@
           "type": "savings",
           "amount": "6000"
         }
-      ]
+      ],
+      "email": "Sincere@april.biz",
+      "password": "Bret",
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "dog-1"
+    },
+    {
+      "id": 2,
+      "firstname": "Ervin Howell",
+      "lastname": "Ervin Howell",
+      "acctype": "Savings",
+      "accno": "1023457",
+      "email": "Shanna@melissa.tv",
+      "password": "Antonette",
+      "balance": "5344",
+      "transactions": [
+        {
+          "id": "1",
+          "date": "12/11/2020",
+          "type": "savings",
+          "amount": "2000"
+        },
+        {
+          "id": "2",
+          "date": "15/11/2020",
+          "type": "savings",
+          "amount": "200"
+        },
+        {
+          "id": "3",
+          "date": "01/11/2020",
+          "type": "savings",
+          "amount": "6000"
+        }
+      ],
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "dog-2"
     },
     {
       "id": 3,
@@ -46,8 +70,31 @@
       "lastname": "Clementine Bauch",
       "acctype": "Savings",
       "accno": "1023458",
+      "balance": "5344",
+      "transactions": [
+        {
+          "id": "1",
+          "date": "12/11/2020",
+          "type": "savings",
+          "amount": "2000"
+        },
+        {
+          "id": "2",
+          "date": "15/11/2020",
+          "type": "savings",
+          "amount": "200"
+        },
+        {
+          "id": "3",
+          "date": "01/11/2020",
+          "type": "savings",
+          "amount": "6000"
+        }
+      ],
       "email": "Nathan@yesenia.net",
-      "password": "Samantha"
+      "password": "Samantha",
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "dog-3"
     },
     {
       "id": 4,
@@ -55,8 +102,31 @@
       "lastname": "Patricia Lebsack",
       "acctype": "Savings",
       "accno": "1023459",
+      "balance": "5344",
+      "transactions": [
+        {
+          "id": "1",
+          "date": "12/11/2020",
+          "type": "savings",
+          "amount": "2000"
+        },
+        {
+          "id": "2",
+          "date": "15/11/2020",
+          "type": "savings",
+          "amount": "200"
+        },
+        {
+          "id": "3",
+          "date": "01/11/2020",
+          "type": "savings",
+          "amount": "6000"
+        }
+      ],
       "email": "Julianne.OConner@kory.org",
-      "password": "Karianne"
+      "password": "Karianne",
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "dog-4"
     },
     {
       "id": 5,
@@ -64,8 +134,31 @@
       "lastname": "Chelsey Dietrich",
       "acctype": "Savings",
       "accno": "1023460",
+      "balance": "5344",
+      "transactions": [
+        {
+          "id": "1",
+          "date": "12/11/2020",
+          "type": "savings",
+          "amount": "2000"
+        },
+        {
+          "id": "2",
+          "date": "15/11/2020",
+          "type": "savings",
+          "amount": "200"
+        },
+        {
+          "id": "3",
+          "date": "01/11/2020",
+          "type": "savings",
+          "amount": "6000"
+        }
+      ],
       "email": "Lucio_Hettinger@annie.ca",
-      "password": "Kamren"
+      "password": "Kamren",
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "dog-5"
     },
     {
       "id": 6,
@@ -73,8 +166,31 @@
       "lastname": "Mrs. Dennis Schulist",
       "acctype": "Savings",
       "accno": "1023461",
+      "balance": "5344",
+      "transactions": [
+        {
+          "id": "1",
+          "date": "12/11/2020",
+          "type": "savings",
+          "amount": "2000"
+        },
+        {
+          "id": "2",
+          "date": "15/11/2020",
+          "type": "savings",
+          "amount": "200"
+        },
+        {
+          "id": "3",
+          "date": "01/11/2020",
+          "type": "savings",
+          "amount": "6000"
+        }
+      ],
       "email": "Karley_Dach@jasper.info",
-      "password": "Leopoldo_Corkery"
+      "password": "Leopoldo_Corkery",
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "dog-6"
     },
     {
       "id": 7,
@@ -82,8 +198,31 @@
       "lastname": "Kurtis Weissnat",
       "acctype": "Savings",
       "accno": "1023462",
+      "balance": "5344",
+      "transactions": [
+        {
+          "id": "1",
+          "date": "12/11/2020",
+          "type": "savings",
+          "amount": "2000"
+        },
+        {
+          "id": "2",
+          "date": "15/11/2020",
+          "type": "savings",
+          "amount": "200"
+        },
+        {
+          "id": "3",
+          "date": "01/11/2020",
+          "type": "savings",
+          "amount": "6000"
+        }
+      ],
       "email": "Telly.Hoeger@billy.biz",
-      "password": "Elwyn.Skiles"
+      "password": "Elwyn.Skiles",
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "dog-7"
     },
     {
       "id": 8,
@@ -91,8 +230,31 @@
       "lastname": "Nicholas Runolfsdottir V",
       "acctype": "Savings",
       "accno": "1023463",
+      "balance": "5344",
+      "transactions": [
+        {
+          "id": "1",
+          "date": "12/11/2020",
+          "type": "savings",
+          "amount": "2000"
+        },
+        {
+          "id": "2",
+          "date": "15/11/2020",
+          "type": "savings",
+          "amount": "200"
+        },
+        {
+          "id": "3",
+          "date": "01/11/2020",
+          "type": "savings",
+          "amount": "6000"
+        }
+      ],
       "email": "Sherwood@rosamond.me",
-      "password": "Maxime_Nienow"
+      "password": "Maxime_Nienow",
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "dog-8"
     },
     {
       "id": 9,
@@ -100,8 +262,31 @@
       "lastname": "Glenna Reichert",
       "acctype": "Savings",
       "accno": "1023464",
+      "balance": "5344",
+      "transactions": [
+        {
+          "id": "1",
+          "date": "12/11/2020",
+          "type": "savings",
+          "amount": "2000"
+        },
+        {
+          "id": "2",
+          "date": "15/11/2020",
+          "type": "savings",
+          "amount": "200"
+        },
+        {
+          "id": "3",
+          "date": "01/11/2020",
+          "type": "savings",
+          "amount": "6000"
+        }
+      ],
       "email": "Chaim_McDermott@dana.io",
-      "password": "Delphine"
+      "password": "Delphine",
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "dog-9"
     },
     {
       "id": 10,
@@ -110,7 +295,30 @@
       "acctype": "Savings",
       "accno": "1023465",
       "email": "Rey.Padberg@karina.biz",
-      "password": "Moriah.Stanton"
+      "balance": "5344",
+      "transactions": [
+        {
+          "id": "1",
+          "date": "12/11/2020",
+          "type": "savings",
+          "amount": "2000"
+        },
+        {
+          "id": "2",
+          "date": "15/11/2020",
+          "type": "savings",
+          "amount": "200"
+        },
+        {
+          "id": "3",
+          "date": "01/11/2020",
+          "type": "savings",
+          "amount": "6000"
+        }
+      ],
+      "password": "Moriah.Stanton",
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "dog-10"
     },
     {
       "firstname": "Trivedh",
@@ -118,8 +326,85 @@
       "acctype": "current",
       "accno": "6474930",
       "email": "madalatrivedh@gmail.com",
+      "balance": "5344",
+      "transactions": [
+        {
+          "id": "1",
+          "date": "12/11/2020",
+          "type": "savings",
+          "amount": "2000"
+        },
+        {
+          "id": "2",
+          "date": "15/11/2020",
+          "type": "savings",
+          "amount": "200"
+        },
+        {
+          "id": "3",
+          "date": "01/11/2020",
+          "type": "savings",
+          "amount": "6000"
+        }
+      ],
       "password": "hoi",
-      "id": 11
+      "id": 11,
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "dog-11"
+    },
+    {
+      "firstname": "Trivedh",
+      "acctype": "Current",
+      "accno": "6474930",
+      "email": "madalatrivedh@gmail.com",
+      "password": "helo",
+      "balance": "5344",
+      "transactions": [
+        {
+          "id": "1",
+          "date": "12/11/2020",
+          "type": "savings",
+          "amount": "2000"
+        },
+        {
+          "id": "2",
+          "date": "15/11/2020",
+          "type": "savings",
+          "amount": "200"
+        },
+        {
+          "id": "3",
+          "date": "01/11/2020",
+          "type": "savings",
+          "amount": "6000"
+        }
+      ],
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "dog-12",
+      "id": 14
+    },
+    {
+      "firstname": "Trivedh",
+      "acctype": "Current",
+      "accno": "6474930",
+      "email": "madalatrive6dh@gmail.com",
+      "password": "heyy",
+      "sectype": "What high school did you attend?",
+      "secans": "lfs",
+      "transactions": [],
+      "id": 15
+    },
+    {
+      "firstname": "Roy",
+      "acctype": "Current",
+      "accno": "5658",
+      "email": "roy@gm.com",
+      "password": "hello",
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "golden",
+      "transactions": [],
+      "balance": "30000$",
+      "id": 16
     }
   ]
 }
