@@ -1,10 +1,23 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Home = () => {
+  const menuRef = useRef();
   return (
     <div>
-    <div>Home</div>
-    <div>{}</div>
+      <div id="menu" ref={menuRef}>
+        <div id="menu-items">
+          {[{ text: "Home", to: "/" }, { text: "About", to: "/" }, { text: "Login", to: '/login' }]
+            .map((element, index) =>
+              <Link
+                to={`${element.to}`}
+                className="menu-item"
+                onMouseOver={e => menuRef.current.dataset.activeIndex = index}>
+                {element.text}
+              </Link>)}
+        </div>
+        {/* <div id="menu-background-pattern"></div> */}
+        {/* <div id="menu-background-image"></div> */}
+      </div>
     </div>
   );
 };
