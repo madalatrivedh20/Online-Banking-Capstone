@@ -4,7 +4,7 @@ import '../style/Login.css';
 import {React, useState, useEffect} from 'react';
 import validator from 'validator';
 import pic from '../style/img_avatar2.png';
-
+import { Alert } from '@mui/material';
 const FormHeader = props => (
    <div>
    <div className='imgcontainer'>
@@ -16,13 +16,15 @@ const FormHeader = props => (
 
 function Login()
 {
+    
 
     const [data,setData] = useState({
         email:"",
         password:""
       })
     const [message,setMessage]=useState("");
-    const checkemail=''
+    let checkemail=''
+    
       
     const {username,password} = data;
     let [users,setusers]=useState({});
@@ -51,11 +53,13 @@ function Login()
       }, []);
 
         const submitHandler = e => {
+        
 
         e.preventDefault();
         let email_str=data['email'][0];
         let password_str=data['password'][0];
-        let checkemail=(validator.isEmail(email_str))
+        checkemail=(validator.isEmail(email_str))
+        console.log("checkemail",checkemail);
         function checkemailpassofuser(obj)
         {
          let flag=0
@@ -69,12 +73,15 @@ function Login()
         }
         if(!checkemail)
         {
+          alert("Please enter a valid Email")
             setMessage("Please enter a valid Email");
+            
          
         }
 
         if(checkemail)
         {
+          setMessage('');
           const result = users.filter(checkemailpassofuser);
           /* console.log("result",result); */
           if(result[0])
@@ -111,8 +118,8 @@ function Login()
 
         </div>
 
-        {!checkemail > 0 &&
-        <div id="message">
+        {!checkemail &&
+        <div /* id="message" */>
         {message}
         </div>
         
@@ -128,7 +135,6 @@ function Login()
   }
   
   export default Login;
-
 
 
 

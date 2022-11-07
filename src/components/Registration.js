@@ -79,6 +79,7 @@ function Registration() {
     fetch('http://localhost:3000/users/', requestOptions)
         .then(response => response.json())
         .then(data=>console.log(data));
+    alert("Registered succesfully")
 
     
   }
