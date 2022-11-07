@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -12,6 +12,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+
+import useAuth from '../AuthContext';
 
 function createData(
   id,
@@ -29,6 +31,7 @@ const rows = [
 ];
 
 const BalanceAndHistory = () => {
+  const { user } = useAuth();
   return (
     <Box>
       <Typography variant="h3" align="center">
@@ -42,15 +45,17 @@ const BalanceAndHistory = () => {
         alignItems="center">
 
         <TextField
-          required
-          label="Old PIN"
+          label="Account Number"
           variant="standard"
+          disabled
+          value={user.accountNo}
           sx={{ display: 'block' }}
         />
         <TextField
-          required
-          label="New Pin"
+          label="Account Balance"
+          value={`${user.balance}$`}
           variant="standard"
+          disabled
           sx={{ display: 'block' }}
         />
       </Grid>
@@ -72,7 +77,7 @@ const BalanceAndHistory = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {rows.map((row) => (
+                {user.transactions.map((row) => (
                   <TableRow
                     key={row.id}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
