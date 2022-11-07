@@ -1,137 +1,150 @@
-// import React from 'react';
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import { Container, Typography, Toolbar, Box, IconButton, Menu, Button } from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
-import MenuIcon from '@mui/icons-material/Menu';
-import AdbIcon from '@mui/icons-material/Adb';
+import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { Box } from '@mui/system';
+import { Button, AppBar, MenuItem, Typography, Container, Toolbar, IconButton, Menu } from '@mui/material';
 
+import useAuth from '../AuthContext';
 
 const Navbar = () => {
+  const auth = useAuth();
+  const navigate = useNavigate();
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
+    <div style={{ display: 'flex', flexDirection: 'row', zIndex: '2000' }}>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
+      <AppBar position="static">
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="/"
               sx={{
-                display: { xs: 'block', md: 'none' },
+                mr: 2,
+                display: { xs: 'none', md: 'flex' },
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
               }}
             >
-              <MenuItem key='balance_history'>
-                <Typography textAlign="center">Balance and History</Typography>
-              </MenuItem>
+              LOGO
+            </Typography>
 
-              <MenuItem key='transfer_funds'>
-                <Typography textAlign="center">Transfer funds</Typography>
-              </MenuItem>
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                color="inherit"
+              >
+                {/* <MenuIcon /> */}
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'left',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'left',
+                }}
+                sx={{
+                  display: { xs: 'block', md: 'none' },
+                }}
+              >
+                <MenuItem key='balance_history'>
+                  <Typography textAlign="center">Balance and History</Typography>
+                </MenuItem>
 
-              <MenuItem key='new_FD'>
-                <Typography textAlign="center">New FD</Typography>
-              </MenuItem>
+                <MenuItem key='transfer_funds'>
+                  <Typography textAlign="center">Transfer funds</Typography>
+                </MenuItem>
 
-              <MenuItem key='request_checkbook'>
-                <Typography textAlign="center">Request checkbok</Typography>
-              </MenuItem>
+                <MenuItem key='new_FD'>
+                  <Typography textAlign="center">New FD</Typography>
+                </MenuItem>
 
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Button
-              key='balance_history'
-              href='/balance'
-              sx={{ my: 2, color: 'white', display: 'block' }}
+                <MenuItem key='request_checkbook'>
+                  <Typography textAlign="center">Request checkbok</Typography>
+                </MenuItem>
+
+              </Menu>
+            </Box>
+
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href=""
+              sx={{
+                mr: 2,
+                display: { xs: 'flex', md: 'none' },
+                flexGrow: 1,
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
             >
-              Balance and History
-            </Button>
+              LOGO
+            </Typography>
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              <Button
+                key='balance_history'
+                href='/balance'
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Balance and History
+              </Button>
 
-            <Button
-              key='transfer_funds'
-              href='/transferfunds'
-              sx={{ my: 2, color: 'white', display: 'block' }}
-            >
-              Transfer funds
-            </Button>
+              <Button
+                key='transfer_funds'
+                href='/transferfunds'
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Transfer funds
+              </Button>
 
-            <Button
-              key='new_FD'
-              href='newfd'
-              sx={{ my: 2, color: 'white', display: 'block' }}
-            >
-              New FD
-            </Button>
+              <Button
+                key='new_FD'
+                href='newfd'
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                New FD
+              </Button>
 
 
-            <Button
-              key='request_checkbook'
-              href='/requestcheckbook'
-              sx={{ my: 2, color: 'white', display: 'block' }}
-            >
-              New checkbook
-            </Button>
+              <Button
+                key='request_checkbook'
+                href='/requestcheckbook'
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                New checkbook
+              </Button>
 
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar >
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar >
+
+      {" "}
+      {auth.isAuthenticated ?
+        <button onClick={e => { auth.setIsAuthenticated(false); navigate('/'); }}>
+          Log out
+        </button>
+        :
+        <button onClick={e => navigate('/login')}>
+          Log In
+        </button>
+      }
+    </div>
   );
 };
 
