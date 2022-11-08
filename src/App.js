@@ -11,12 +11,12 @@ import Navbar from './components/Navbar';
 import NewFD from './components/NewFD';
 import RequestChequebook from './components/RequestChequebook';
 import TransferFunds from './components/TransferFunds';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 import PrivateRoute from './components/PrivateRoute';
 
-import { AuthProvider } from './AuthContext';
+import useAppState, { AppStateProvider } from './AppStateContext';
 import { ToastContainer } from 'react-toastify';
 import {
   BrowserRouter as Router,
@@ -24,23 +24,31 @@ import {
   Route
 } from "react-router-dom";
 
+import { getAllUsers } from './service/api';
 
 
 
 function App() {
-/*   const [auth, setAuth] = useState(null);
+  /*   const [auth, setAuth] = useState(null);
+  
+    useEffect(() => {
+      let user = localStorage.getItem("user");
+      user && JSON.parse(user) ? setAuth(true) : setAuth(false);
+    }, []);
+  
+    */
+
+  const { setAllUsers } = useAppState();
 
   useEffect(() => {
-    let user = localStorage.getItem("user");
-    user && JSON.parse(user) ? setAuth(true) : setAuth(false);
+    (async () => {
+      const resposne = await getAllUsers();
+      setAllUsers(resposne);
+    })();
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("user", auth);
-  }, [auth]);
- */
   return (
-    <AuthProvider>
+    <>
       <ToastContainer />
       <Router>
         <Navbar />
@@ -70,7 +78,7 @@ function App() {
           } />
         </Routes>
       </Router>
-    </AuthProvider>
+    </>
   );
 }
 

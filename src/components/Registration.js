@@ -5,6 +5,9 @@ import pic from '../style/img_avatar2.png';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 
+import { newATMPIN } from '../service/api';
+import { genRandomPin } from '../service/util';
+
 const FormHeader = props => (
   <div>
     <div className='imgcontainer'>
@@ -15,7 +18,7 @@ const FormHeader = props => (
 );
 
 function Registration() {
-  
+
   const navigate = useNavigate();
   const [data, setData] = useState({
     firstname: "",
@@ -24,12 +27,11 @@ function Registration() {
     email: "",
     password: "",
     repassword: "",
-    sectype : "",
-    secans : "",
-    transactions:[],
-    balance : "30000$"
-  })
-  const checkemail = ''
+    sectype: "",
+    secans: "",
+    balance: "30000"
+  });
+  const checkemail = '';
 
   const { username, password } = data;
   let [users, setusers] = useState({});
@@ -38,7 +40,7 @@ function Registration() {
   const changeHandler = e => {
     setData({ ...data, [e.target.name]: [e.target.value] });
 
-  }
+  };
 
   const getUsers = async () => {
     try {
@@ -48,7 +50,7 @@ function Registration() {
     } catch (error) {
       console.log(error.message);
     }
-  }
+  };
 
   useEffect(() => {
     getUsers();
@@ -64,42 +66,47 @@ function Registration() {
     if (!validator.isAlpha(data['acctype'][0])) return toast.error("Invalid Account type");
     if (!validator.isNumeric(data['accno'][0])) return toast.error("Invalid Account Number");
     if (!validator.isEmail(data['email'][0])) return toast.error("Please enter a valid Email");
- 
+
+    // CHECK IF ACC NO ALRDY EXISTS
+
     let email_str = data['email'][0];
     let password_str = data['password'][0];
-    let repassword_str=data['repassword'][0];
-    let checkemail = (validator.isEmail(email_str))
+    let repassword_str = data['repassword'][0];
+    let checkemail = (validator.isEmail(email_str));
 
 
-    
+
     if (!checkemail) {
       return toast.error("Please enter a valid Email");
 
     }
-    
-    if (checkemail)
-    {
-      if(password_str===repassword_str) {
+
+    if (checkemail) {
+      if (password_str === repassword_str) {
         const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 'firstname': data['firstname'][0] /* 'lastname': data['lastname'][0] */,'acctype':data['acctype'][0],
-        'accno':data['accno'][0],'email':data['email'][0],'password':data['password'][0],'sectype':data['sectype'][0],'secans':data['secans'][0],'transactions':[],'balance':'30000$'
-       })
-    };
-    fetch('http://localhost:3000/users/', requestOptions)
-        .then(response => response.json())
-        .then(data=>console.log(data));
-        toast.success("Registered Successfully")
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            'firstname': data['firstname'][0] /* 'lastname': data['lastname'][0] */, 'acctype': data['acctype'][0],
+            'accno': data['accno'][0], 'email': data['email'][0], 'password': data['password'][0], 'sectype': data['sectype'][0], 'secans': data['secans'][0], 'balance': '30000'
+          })
+        };
+        fetch('http://localhost:3000/users/', requestOptions)
+          .then(response => response.json())
+          .then(data => newATMPIN(genRandomPin(), data.accno, data.id));
+        toast.success("Registered Successfully");
         navigate('/login');
 
-     
-  }
-  else{
-    return toast.error("Passwords doesnt match");
-  }
-}
-  }
+        // Try to use async/await, makes the code cleaner
+        // Navigate only after registeration is done, use a loading state to signify creation of account, or looking into promise toasts from other components
+
+
+      }
+      else {
+        return toast.error("Passwords doesnt match");
+      }
+    }
+  };
 
   return (
     <div>
@@ -122,24 +129,24 @@ function Registration() {
 
               <div className="row">
                 <label>Account Type</label>
-                
+
                 <select name="acctype" required value={data.acctype} onChange={changeHandler}>
                   <option value={"None"}>None</option>
                   <option value={"Current"}>Current</option>
                   <option value={"Saving"}>Savings</option>
                 </select>
-               
+
               </div>
 
               <div className="row">
                 <label>Security Question Type</label>
-                
+
                 <select name="sectype" required value={data.sectype} onChange={changeHandler}>
                   <option value={"In what city were you born?"}>In what city were you born</option>
                   <option value={"What is the name of your favorite pet?"}>What is the name of your favorite pet?</option>
                   <option value={"What high school did you attend?"}>What high school did you attend?</option>
                 </select>
-               
+
               </div>
               <div className="row">
                 <label>Security Question Answer</label>
@@ -166,7 +173,7 @@ function Registration() {
                 <input required type="password" name="repassword" placeholder="Re-Enter your Password" value={data.repassword} onChange={changeHandler} />
               </div>
 
-             
+
             </div>
           </div>
           <div id="button" className="row">
@@ -179,7 +186,7 @@ function Registration() {
 
 
     </div>
-  )
+  );
 }
 
 export default Registration

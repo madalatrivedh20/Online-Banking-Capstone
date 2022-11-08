@@ -5,406 +5,246 @@
       "firstname": "Leanne Graham",
       "lastname": "Leanne Graham",
       "acctype": "Savings",
-      "accno": "1023456",
-      "balance": "5344",
-      "transactions": [
-        {
-          "id": "1",
-          "date": "12/11/2020",
-          "type": "savings",
-          "amount": "2000"
-        },
-        {
-          "id": "2",
-          "date": "15/11/2020",
-          "type": "savings",
-          "amount": "200"
-        },
-        {
-          "id": "3",
-          "date": "01/11/2020",
-          "type": "savings",
-          "amount": "6000"
-        }
-      ],
-      "email": "Sincere@april.biz",
-      "password": "Bret",
+      "accno": "1",
+      "balance": "8236499",
+      "email": "ashishnvj@gmail.com",
+      "password": "ashish",
       "sectype": "What is the name of your favorite pet?",
       "secans": "dog-1"
     },
     {
       "id": 2,
-      "firstname": "Ervin Howell",
-      "lastname": "Ervin Howell",
+      "firstname": "Leanne Graham2",
+      "lastname": "Leanne Graham2",
       "acctype": "Savings",
-      "accno": "1023457",
-      "email": "Shanna@melissa.tv",
-      "password": "Antonette",
-      "balance": "5344",
-      "transactions": [
-        {
-          "id": "1",
-          "date": "12/11/2020",
-          "type": "savings",
-          "amount": "2000"
-        },
-        {
-          "id": "2",
-          "date": "15/11/2020",
-          "type": "savings",
-          "amount": "200"
-        },
-        {
-          "id": "3",
-          "date": "01/11/2020",
-          "type": "savings",
-          "amount": "6000"
-        }
-      ],
+      "accno": "2",
+      "balance": "8231194",
+      "email": "ash@ash.com",
+      "password": "ashish",
       "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-2"
+      "secans": "dog-1"
     },
     {
-      "id": 3,
-      "firstname": "Clementine Bauch",
-      "lastname": "Clementine Bauch",
-      "acctype": "Savings",
-      "accno": "1023458",
-      "balance": "5344",
-      "transactions": [
-        {
-          "id": "1",
-          "date": "12/11/2020",
-          "type": "savings",
-          "amount": "2000"
-        },
-        {
-          "id": "2",
-          "date": "15/11/2020",
-          "type": "savings",
-          "amount": "200"
-        },
-        {
-          "id": "3",
-          "date": "01/11/2020",
-          "type": "savings",
-          "amount": "6000"
-        }
-      ],
-      "email": "Nathan@yesenia.net",
-      "password": "Samantha",
-      "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-3"
-    },
-    {
-      "id": 4,
-      "firstname": "Patricia Lebsack",
-      "lastname": "Patricia Lebsack",
-      "acctype": "Savings",
-      "accno": "1023459",
-      "balance": "5344",
-      "transactions": [
-        {
-          "id": "1",
-          "date": "12/11/2020",
-          "type": "savings",
-          "amount": "2000"
-        },
-        {
-          "id": "2",
-          "date": "15/11/2020",
-          "type": "savings",
-          "amount": "200"
-        },
-        {
-          "id": "3",
-          "date": "01/11/2020",
-          "type": "savings",
-          "amount": "6000"
-        }
-      ],
-      "email": "Julianne.OConner@kory.org",
-      "password": "Karianne",
-      "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-4"
-    },
-    {
-      "id": 5,
-      "firstname": "Chelsey Dietrich",
-      "lastname": "Chelsey Dietrich",
-      "acctype": "Savings",
-      "accno": "1023460",
-      "balance": "5344",
-      "transactions": [
-        {
-          "id": "1",
-          "date": "12/11/2020",
-          "type": "savings",
-          "amount": "2000"
-        },
-        {
-          "id": "2",
-          "date": "15/11/2020",
-          "type": "savings",
-          "amount": "200"
-        },
-        {
-          "id": "3",
-          "date": "01/11/2020",
-          "type": "savings",
-          "amount": "6000"
-        }
-      ],
-      "email": "Lucio_Hettinger@annie.ca",
-      "password": "Kamren",
-      "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-5"
-    },
-    {
-      "id": 6,
-      "firstname": "Mrs. Dennis Schulist",
-      "lastname": "Mrs. Dennis Schulist",
-      "acctype": "Savings",
-      "accno": "1023461",
-      "balance": "5344",
-      "transactions": [
-        {
-          "id": "1",
-          "date": "12/11/2020",
-          "type": "savings",
-          "amount": "2000"
-        },
-        {
-          "id": "2",
-          "date": "15/11/2020",
-          "type": "savings",
-          "amount": "200"
-        },
-        {
-          "id": "3",
-          "date": "01/11/2020",
-          "type": "savings",
-          "amount": "6000"
-        }
-      ],
-      "email": "Karley_Dach@jasper.info",
-      "password": "Leopoldo_Corkery",
-      "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-6"
-    },
-    {
-      "id": 7,
-      "firstname": "Kurtis Weissnat",
-      "lastname": "Kurtis Weissnat",
-      "acctype": "Savings",
-      "accno": "1023462",
-      "balance": "5344",
-      "transactions": [
-        {
-          "id": "1",
-          "date": "12/11/2020",
-          "type": "savings",
-          "amount": "2000"
-        },
-        {
-          "id": "2",
-          "date": "15/11/2020",
-          "type": "savings",
-          "amount": "200"
-        },
-        {
-          "id": "3",
-          "date": "01/11/2020",
-          "type": "savings",
-          "amount": "6000"
-        }
-      ],
-      "email": "Telly.Hoeger@billy.biz",
-      "password": "Elwyn.Skiles",
-      "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-7"
-    },
-    {
-      "id": 8,
-      "firstname": "Nicholas Runolfsdottir V",
-      "lastname": "Nicholas Runolfsdottir V",
-      "acctype": "Savings",
-      "accno": "1023463",
-      "balance": "5344",
-      "transactions": [
-        {
-          "id": "1",
-          "date": "12/11/2020",
-          "type": "savings",
-          "amount": "2000"
-        },
-        {
-          "id": "2",
-          "date": "15/11/2020",
-          "type": "savings",
-          "amount": "200"
-        },
-        {
-          "id": "3",
-          "date": "01/11/2020",
-          "type": "savings",
-          "amount": "6000"
-        }
-      ],
-      "email": "Sherwood@rosamond.me",
-      "password": "Maxime_Nienow",
-      "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-8"
-    },
-    {
-      "id": 9,
-      "firstname": "Glenna Reichert",
-      "lastname": "Glenna Reichert",
-      "acctype": "Savings",
-      "accno": "1023464",
-      "balance": "5344",
-      "transactions": [
-        {
-          "id": "1",
-          "date": "12/11/2020",
-          "type": "savings",
-          "amount": "2000"
-        },
-        {
-          "id": "2",
-          "date": "15/11/2020",
-          "type": "savings",
-          "amount": "200"
-        },
-        {
-          "id": "3",
-          "date": "01/11/2020",
-          "type": "savings",
-          "amount": "6000"
-        }
-      ],
-      "email": "Chaim_McDermott@dana.io",
-      "password": "Delphine",
-      "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-9"
-    },
-    {
-      "id": 10,
-      "firstname": "Clementina DuBuque",
-      "lastname": "Clementina DuBuque",
-      "acctype": "Savings",
-      "accno": "1023465",
-      "email": "Rey.Padberg@karina.biz",
-      "balance": "5344",
-      "transactions": [
-        {
-          "id": "1",
-          "date": "12/11/2020",
-          "type": "savings",
-          "amount": "2000"
-        },
-        {
-          "id": "2",
-          "date": "15/11/2020",
-          "type": "savings",
-          "amount": "200"
-        },
-        {
-          "id": "3",
-          "date": "01/11/2020",
-          "type": "savings",
-          "amount": "6000"
-        }
-      ],
-      "password": "Moriah.Stanton",
-      "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-10"
-    },
-    {
-      "firstname": "Trivedh",
-      "lastname": "Madala",
-      "acctype": "current",
-      "accno": "6474930",
-      "email": "madalatrivedh@gmail.com",
-      "balance": "5344",
-      "transactions": [
-        {
-          "id": "1",
-          "date": "12/11/2020",
-          "type": "savings",
-          "amount": "2000"
-        },
-        {
-          "id": "2",
-          "date": "15/11/2020",
-          "type": "savings",
-          "amount": "200"
-        },
-        {
-          "id": "3",
-          "date": "01/11/2020",
-          "type": "savings",
-          "amount": "6000"
-        }
-      ],
-      "password": "hoi",
-      "id": 11,
-      "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-11"
-    },
-    {
-      "firstname": "Trivedh",
+      "firstname": "test",
       "acctype": "Current",
-      "accno": "6474930",
-      "email": "madalatrivedh@gmail.com",
-      "password": "helo",
-      "balance": "5344",
-      "transactions": [
-        {
-          "id": "1",
-          "date": "12/11/2020",
-          "type": "savings",
-          "amount": "2000"
-        },
-        {
-          "id": "2",
-          "date": "15/11/2020",
-          "type": "savings",
-          "amount": "200"
-        },
-        {
-          "id": "3",
-          "date": "01/11/2020",
-          "type": "savings",
-          "amount": "6000"
-        }
-      ],
-      "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-12",
+      "accno": "1231",
+      "email": "test@test.com",
+      "password": "123",
+      "secans": "blr",
+      "balance": "NaN",
+      "id": 3
+    }
+  ],
+  "transactions": [
+    {
+      "userId": 1,
+      "accountNumber": "1",
+      "accountType": "Savings",
+      "transactionType": "Debit",
+      "amount": "124",
+      "transactionDate": "08/112022",
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "accountNumber": "2",
+      "accountType": "Savings",
+      "transactionType": "Credit",
+      "amount": "124",
+      "transactionDate": "08/112022",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "accountNumber": "1",
+      "accountType": "Savings",
+      "transactionType": "Debit",
+      "amount": "34",
+      "transactionDate": "08/112022",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "accountNumber": "2",
+      "accountType": "Savings",
+      "transactionType": "Credit",
+      "amount": "34",
+      "transactionDate": "08/112022",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "accountNumber": "1",
+      "accountType": "Savings",
+      "transactionType": "Debit",
+      "amount": "500",
+      "transactionDate": "08/112022",
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "accountNumber": "2",
+      "accountType": "Savings",
+      "transactionType": "Credit",
+      "amount": "500",
+      "transactionDate": "08/112022",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "accountNumber": "1",
+      "accountType": "Savings",
+      "transactionType": "Debit",
+      "amount": "55",
+      "transactionDate": "08/112022",
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "accountNumber": "2",
+      "accountType": "Savings",
+      "transactionType": "Credit",
+      "amount": "55",
+      "transactionDate": "08/112022",
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "accountNumber": "2",
+      "accountType": "Savings",
+      "transactionType": "Debit",
+      "amount": "100",
+      "transactionDate": "08/112022",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "accountNumber": "1",
+      "accountType": "Savings",
+      "transactionType": "Credit",
+      "amount": "100",
+      "transactionDate": "08/112022",
+      "id": 10
+    },
+    {
+      "userId": 2,
+      "accountNumber": "2",
+      "accountType": "Savings",
+      "transactionType": "Debit",
+      "amount": "56",
+      "transactionDate": "08/112022",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "accountNumber": "1",
+      "accountType": "Savings",
+      "transactionType": "Credit",
+      "amount": "56",
+      "transactionDate": "08/112022",
+      "id": 12
+    },
+    {
+      "userId": 3,
+      "accountNumber": "1231",
+      "accountType": "Current",
+      "transactionType": "Debit",
+      "amount": "233",
+      "transactionDate": "08/112022",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "accountNumber": "1",
+      "accountType": "Savings",
+      "transactionType": "Credit",
+      "amount": "233",
+      "transactionDate": "08/112022",
       "id": 14
     },
     {
-      "firstname": "Trivedh",
-      "acctype": "Current",
-      "accno": "6474930",
-      "email": "madalatrive6dh@gmail.com",
-      "password": "heyy",
-      "sectype": "What high school did you attend?",
-      "secans": "lfs",
-      "transactions": [],
+      "userId": 3,
+      "accountNumber": "1231",
+      "accountType": "Current",
+      "transactionType": "Debit",
+      "amount": "342",
+      "transactionDate": "08/112022",
       "id": 15
     },
     {
-      "firstname": "Roy",
-      "acctype": "Current",
-      "accno": "5658",
-      "email": "roy@gm.com",
-      "password": "hello",
-      "sectype": "What is the name of your favorite pet?",
-      "secans": "golden",
-      "transactions": [],
-      "balance": "30000$",
+      "userId": 1,
+      "accountNumber": "1",
+      "accountType": "Savings",
+      "transactionType": "Credit",
+      "amount": "342",
+      "transactionDate": "08/112022",
       "id": 16
+    },
+    {
+      "userId": 2,
+      "accountNumber": "2",
+      "accountType": "Savings",
+      "transactionType": "Debit",
+      "amount": "444",
+      "transactionDate": "08/112022",
+      "id": 17
+    },
+    {
+      "userId": 3,
+      "accountNumber": "1231",
+      "accountType": "Current",
+      "transactionType": "Credit",
+      "amount": "444",
+      "transactionDate": "08/112022",
+      "id": 18
+    },
+    {
+      "userId": 2,
+      "accountNumber": "2",
+      "accountType": "Savings",
+      "transactionType": "Debit",
+      "amount": "6",
+      "transactionDate": "08/112022",
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "accountNumber": "1",
+      "accountType": "Savings",
+      "transactionType": "Credit",
+      "amount": "6",
+      "transactionDate": "08/112022",
+      "id": 20
+    }
+  ],
+  "ATMPINs": [
+    {
+      "id": 1,
+      "pin": "1111",
+      "accountNumber": "1",
+      "userId": 1
+    },
+    {
+      "pin": "9958",
+      "accountNumber": "1231",
+      "userId": 3,
+      "id": 2
+    },
+    {
+      "pin": "1111",
+      "accountNumber": "2",
+      "userId": 2,
+      "id": 2
+    }
+  ],
+  "fixedDeposits": [
+    {
+      "id": 1,
+      "accountNumber": "1",
+      "FDProduct": "Cumulative",
+      "FDPeriod": "3 Months",
+      "amount": "200",
+      "userId": 1
     }
   ]
 }

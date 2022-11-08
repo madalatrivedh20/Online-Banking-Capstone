@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import validator from 'validator';
 import pic from '../style/img_avatar2.png';
 
-import useAuth from '../AuthContext';
+import useAppContext from '../AppStateContext';
 
 const FormHeader = props => (
   <div>
@@ -20,7 +20,7 @@ const FormHeader = props => (
 
 function Login() {
 
-  const { setIsAuthenticated, setUser } = useAuth();
+  const { setIsAuthenticated, setUser } = useAppContext();
   const navigate = useNavigate();
 
   const [data, setData] = useState({
@@ -82,7 +82,8 @@ function Login() {
       if (result[0]) {
         // alert("Welcome" + " " + result[0].firstname);
         // console.log(result[0]);
-        setUser(result[0]);
+        const { id, accno, acctype } = result[0];
+        setUser({ id, accno, acctype });
         setIsAuthenticated(true);
         toast.success("Logged In successfully");
         navigate('/balance');
