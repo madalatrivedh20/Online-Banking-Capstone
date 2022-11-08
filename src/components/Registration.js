@@ -1,7 +1,7 @@
 import '../style/Login.css';
 import { React, useState, useEffect } from 'react';
 import validator from 'validator';
-import pic from '../style/img_avatar2.png';
+import pic from '../style/download.png';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -75,12 +75,6 @@ function Registration() {
     let checkemail = (validator.isEmail(email_str));
 
 
-
-    if (!checkemail) {
-      return toast.error("Please enter a valid Email");
-
-    }
-
     if (checkemail) {
       if (password_str === repassword_str) {
         const requestOptions = {
@@ -88,7 +82,8 @@ function Registration() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             'firstname': data['firstname'][0] /* 'lastname': data['lastname'][0] */, 'acctype': data['acctype'][0],
-            'accno': data['accno'][0], 'email': data['email'][0], 'password': data['password'][0], 'sectype': data['sectype'][0], 'secans': data['secans'][0], 'balance': '30000'
+            'accno': data['accno'][0], 'email': data['email'][0], 'password': data['password'][0], 'sectype': data['sectype'][0], 'secans': data['secans'][0],
+            'balance': '30000', "cheque": {}
           })
         };
         fetch('http://localhost:3000/users/', requestOptions)

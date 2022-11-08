@@ -76,6 +76,11 @@ function App() {
               <BalanceAndHistory />
             </PrivateRoute>
           } />
+          <Route exact path="/newcheckbook" element={
+            <PrivateRoute>
+              <RequestChequebook />
+            </PrivateRoute>
+          } />
         </Routes>
       </Router>
     </>
