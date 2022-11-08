@@ -24,7 +24,7 @@ const Navbar = () => {
               sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
-                fontWeight: 700,
+                fontWeight: 600,
                 color: 'inherit',
                 textDecoration: 'none',
               }}
@@ -98,7 +98,8 @@ const Navbar = () => {
               <Button
                 key='balance_history'
                 href='/balance'
-                sx={{ my: 2, color: 'white', display: 'block', font: 'arial' }}
+                size='medium'
+                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'arial', fontSize: 14 }}
               >
                 Balance and History
               </Button>
@@ -106,7 +107,7 @@ const Navbar = () => {
               <Button
                 key='transfer_funds'
                 href='/transferfunds'
-                sx={{ my: 2, color: 'white', display: 'block', font: 'arial' }}
+                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'arial', fontSize: 14 }}
               >
                 Transfer funds
               </Button>
@@ -114,7 +115,7 @@ const Navbar = () => {
               <Button
                 key='new_FD'
                 href='newfd'
-                sx={{ my: 2, color: 'white', display: 'block', font: 'arial' }}
+                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'arial', fontSize: 14 }}
               >
                 New FD
               </Button>
@@ -123,7 +124,7 @@ const Navbar = () => {
               <Button
                 key='request_checkbook'
                 href='/requestcheckbook'
-                sx={{ my: 2, color: 'white', display: 'block', font: 'arial' }}
+                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'arial', fontSize: 14 }}
               >
                 New checkbook
               </Button>
@@ -134,16 +135,17 @@ const Navbar = () => {
       </AppBar >
 
       {" "}
-      {auth.isAuthenticated ?
-        <button onClick={e => { auth.setIsAuthenticated(false); navigate('/'); }}>
-          Log out
-        </button>
-        :
-        <button onClick={e => navigate('/login')}>
-          Log In
-        </button>
+      {
+        auth.isAuthenticated ?
+          <button onClick={e => { auth.setIsAuthenticated(false); navigate('/'); }}>
+            Log out
+          </button>
+          :
+          <button onClick={e => navigate('/login')}>
+            Log In
+          </button>
       }
-    </div>
+    </div >
   );
 };
 
