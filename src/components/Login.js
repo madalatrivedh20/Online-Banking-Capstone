@@ -5,9 +5,13 @@ import { React, useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import validator from 'validator';
-import pic from '../style/img_avatar2.png';
+/* import pic from '../style/img_avatar2.png'; */
+import pic from '../style/download.png';
 
-import useAuth from '../AuthContext';
+import useAppContext from '../AppStateContext';
+
+import { signInWithFaceBook } from './Firebase';
+import { signInWithGoogle } from './Firebase';
 
 const FormHeader = props => (
   <div>
@@ -20,17 +24,15 @@ const FormHeader = props => (
 
 function Login() {
 
-  const { setIsAuthenticated, setUser } = useAuth();
+  const { setIsAuthenticated, setUser } = useAppContext();
+
   const navigate = useNavigate();
 
   const [data, setData] = useState({
     email: "",
     password: ""
   });
-  const [message, setMessage] = useState("");
-  const checkemail = '';
 
-  const { username, password } = data;
   let [users, setusers] = useState({});
 
 
@@ -38,6 +40,8 @@ function Login() {
     setData({ ...data, [e.target.name]: [e.target.value] });
 
   };
+
+
 
   const getUsers = async () => {
     try {
@@ -72,7 +76,7 @@ function Login() {
 
     }
     if (!checkemail) {
-      setMessage("Please enter a valid Email");
+      toast.error("Please enter a valid e-mail");
 
     }
 
@@ -82,14 +86,15 @@ function Login() {
       if (result[0]) {
         // alert("Welcome" + " " + result[0].firstname);
         // console.log(result[0]);
-        setUser(result[0]);
+        const { id, accno, acctype } = result[0];
+        setUser({ id, accno, acctype });
         setIsAuthenticated(true);
         toast.success("Logged In successfully");
         navigate('/balance');
         /*  console.log("Welcome"); */
       }
       else {
-        alert("Wrong credentials");
+        toast.error("Wrong credentials");
         /* console.log("Wrong credentials"); */
       }
     }
@@ -112,19 +117,30 @@ function Login() {
             <button>Log In</button>
 
           </div>
+          <hr />
+          <div id="button" className="row">
+            <div style={{ "textAlign": "center", "marginLeft": "0px" }}>
+              <ul>
+                <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithFaceBook} class="fa fa-facebook"></a></li>
+                <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithGoogle} class="fa fa-google"></a></li>
+                <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithGoogle} class="fa fa-twitter"></a></li>
+
+              </ul>
+            </div>
+            {/*  <button >Sign in with google</button>
+          <button onClick={signInWithFaceBook}>Sign in with fb</button> */}
+
+
+
+          </div>
         </form>
 
       </div>
 
-      {!checkemail > 0 &&
-        <div id="message">
-          {message}
-        </div>
 
-      }
 
-      <div className="container" style={{ "backgroundColor": "#f1f1f1", "height": "50px" }}>
-        New User ? <a href="#">Register Here</a>
+      <div className="container" style={{ "backgroundColor": "#f1f1f1", "height": "50px", "textAlign": "center" }}>
+        New User ? <a href="/register">Register Here</a>
       </div>
 
 
@@ -133,7 +149,6 @@ function Login() {
 }
 
 export default Login;
-
 
 
 

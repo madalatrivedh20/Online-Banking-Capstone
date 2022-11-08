@@ -13,7 +13,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-import useAuth from '../AuthContext';
+import { getCurrentUser } from '../service/api';
+import useAppContext from '../AppStateContext';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function createData(
   id,
@@ -31,8 +34,20 @@ const rows = [
 ];
 
 const BalanceAndHistory = () => {
-  const { user } = useAuth();
-  return (
+  const { user } = useAppContext();
+
+  const [userData, setUserData] = useState();
+
+  console.log(userData);
+
+  useEffect(() => {
+    (async () => {
+      const response = await getCurrentUser(user.id);
+      setUserData(response);
+    })();
+  }, []);
+
+  return userData && (
     <Box>
       <Typography variant="h3" align="center">
         Account Details
@@ -48,17 +63,18 @@ const BalanceAndHistory = () => {
           label="Account Number"
           variant="standard"
           disabled
-          value={user.accountNo}
+          value={userData.accno}
           sx={{ display: 'block' }}
         />
         <TextField
           label="Account Balance"
-          value={`${user.balance}$`}
+          value={`${userData.balance}$`}
           variant="standard"
           disabled
           sx={{ display: 'block' }}
         />
       </Grid>
+
 
       <Grid container
         direction="column"
@@ -77,7 +93,20 @@ const BalanceAndHistory = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {user.transactions.map((row) => (
+
+                {userData.transactions.length == 0 && (
+                  <TableRow
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell component="th" scope="row"> No Transactions to show
+                    </TableCell>
+                    <TableCell align="right">{""}</TableCell>
+                    <TableCell align="right">{""}</TableCell>
+                    <TableCell align="right">{""}</TableCell>
+                  </TableRow>
+                )}
+
+                {userData.transactions.map((row) => (
                   <TableRow
                     key={row.id}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -85,8 +114,8 @@ const BalanceAndHistory = () => {
                     <TableCell component="th" scope="row">
                       {row.id}
                     </TableCell>
-                    <TableCell align="right">{row.date}</TableCell>
-                    <TableCell align="right">{row.type}</TableCell>
+                    <TableCell align="right">{row.transactionDate}</TableCell>
+                    <TableCell align="right">{row.transactionType}</TableCell>
                     <TableCell align="right">{row.amount}</TableCell>
                   </TableRow>
                 ))}

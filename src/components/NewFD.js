@@ -1,40 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import validator from 'validator';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 import TextField from '@mui/material/TextField';
 import { FormControl, Select, InputLabel, MenuItem, FormGroup, FormControlLabel, Checkbox, Button } from '@mui/material';
 
+import { createFD } from '../service/api';
+import useAppContext from '../AppStateContext';
+
 const NewFD = () => {
+  const navigate = useNavigate();
+  const { user } = useAppContext();
+  const toastId = useRef(null);
+
   const [data, setData] = useState({
-    accNo: "",
+    accNo: user.accno,
     FDProduct: "",
     FDPeriod: "",
-    amount: "",
-    checkbox: false
+    amount: ""
   });
+
+  const [checkbox, setCheckbox] = useState(false);
+
+  const [loading, setLoading] = useState(false);
 
   const onChangeHandler = (e) => setData({ ...data, [e.target.name]: e.target.value });
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = async (e) => {
     if (!validator.isNumeric(data.accNo)) return toast.error("Invalid Account Number");
     if (!data.FDProduct) return toast.error("Please select FD Product");
     if (!data.FDPeriod) return toast.error("Please select FD Period");
     if (!validator.isNumeric(data.amount)) return toast.error("Invalid Amount");
-    if (!data.checkbox) return toast.error("Please agree to terms and conditions");
-    setData({
-      accNo: "",
-      FDProduct: "",
-      FDPeriod: "",
-      amount: "",
-      checkbox: false
+    if (!checkbox) return toast.error("Please agree to terms and conditions");
+    // if (Number(data.amount) > Number(user.balance)) return toast.error("You have insufficient balance!");
+
+    toastId.current = toast.loading("Creating Fixed Deposit...");
+    const { type, render } = await createFD({ ...data, userId: user.id });
+
+    toast.update(toastId.current, {
+      type,
+      render,
+      isLoading: false,
+      autoClose: 5000,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
     });
-    return toast.success("FD Created");
+
+    if (type === "success") {
+      return navigate("/balance");
+    } else {
+      setLoading(false);
+    }
   };
+  ;
 
   return (
     <Grid
@@ -55,6 +77,7 @@ const NewFD = () => {
           label="From Account"
           variant="standard"
           name="accNo"
+          disabled
           onChange={onChangeHandler}
           value={data.accNo}
           sx={{ display: 'block' }}
@@ -73,9 +96,10 @@ const NewFD = () => {
             name="FDProduct"
             value={data.FDProduct}
           >
-            <MenuItem value={"product-1"}>Product 1</MenuItem>
-            <MenuItem value={"product-2"}>Product 2</MenuItem>
-            <MenuItem value={"product-3"}>Product 3</MenuItem>
+            <MenuItem value={"Standard"}>Standard</MenuItem>
+            <MenuItem value={"Corporate"}>Corporate</MenuItem>
+            <MenuItem value={"Cumulative"}>Cumulative</MenuItem>
+            <MenuItem value={"Tax-Saving"}>Tax-Saving</MenuItem>
           </Select>
         </FormControl>
       </Grid>
@@ -92,9 +116,10 @@ const NewFD = () => {
             name="FDPeriod"
             value={data.FDPeriod}
           >
-            <MenuItem value={"period-1"}>Period 1</MenuItem>
-            <MenuItem value={"period-2"}>Period 2</MenuItem>
-            <MenuItem value={"period-3"}>Period 3</MenuItem>
+            <MenuItem value={"3 Months"}>3 Months</MenuItem>
+            <MenuItem value={"6 Months"}>6 Months</MenuItem>
+            <MenuItem value={"9 Months"}>9 Months</MenuItem>
+            <MenuItem value={"12 Months"}>12 Months</MenuItem>
           </Select>
         </FormControl>
       </Grid>
@@ -114,14 +139,19 @@ const NewFD = () => {
 
       <Grid item xs={12}>
         <FormGroup>
-          <FormControlLabel control={<Checkbox
-            value={data.checkbox}
-            onChange={e => setData({ ...data, checkbox: e.target.checked })} />} label="I have read and accepted the terms and conditions" />
+          <FormControlLabel
+            control={
+              <Checkbox
+                required
+                checked={checkbox}
+                onChange={e => setCheckbox(e.target.checked)} />
+            }
+            label="I have read and accepted the terms and conditions" />
         </FormGroup>
       </Grid>
 
       <Grid item xs={12}>
-        <Button variant="contained" onClick={onSubmitHandler}>Register</Button>
+        <Button variant="contained" onClick={onSubmitHandler} disabled={loading}>Register</Button>
       </Grid>
     </Grid>
   );
