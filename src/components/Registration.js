@@ -1,7 +1,7 @@
 import '../style/Login.css';
 import { React, useState, useEffect } from 'react';
 import validator from 'validator';
-import pic from '../style/img_avatar2.png';
+import pic from '../style/download.png';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -69,13 +69,7 @@ function Registration() {
     let password_str = data['password'][0];
     let repassword_str=data['repassword'][0];
     let checkemail = (validator.isEmail(email_str))
-
-
     
-    if (!checkemail) {
-      return toast.error("Please enter a valid Email");
-
-    }
     
     if (checkemail)
     {

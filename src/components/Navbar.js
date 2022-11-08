@@ -95,15 +95,20 @@ const Navbar = () => {
             >
               LOGO
             </Typography>
+            
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              <Button
+            <Link to="/about" sx={{ my: 2, color: 'white', display: 'block' }}>Balance and History</Link> 
+             {/*  <Button
                 key='balance_history'
                 href='/balance'
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 Balance and History
-              </Button>
+              </Button> */}
 
+            <Link to="/transferfunds" sx={{ my: 2, color: 'white', display: 'block' }}>Transfer Funds</Link>
+    
+          {/*   <Link>
               <Button
                 key='transfer_funds'
                 href='/transferfunds'
@@ -111,23 +116,24 @@ const Navbar = () => {
               >
                 Transfer funds
               </Button>
-
-              <Button
+              </Link> */}
+            <Link to="/newfd" sx={{ my: 2, color: 'white', display: 'block' }}>New FD</Link>
+            {/*   <Button
                 key='new_FD'
                 href='newfd'
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 New FD
-              </Button>
+              </Button> */}
 
-
-              <Button
+<Link to="/newcheckbook" sx={{ my: 2, color: 'white', display: 'block' }}>New Checkbook</Link>
+             {/*  <Button
                 key='request_checkbook'
                 href='/requestcheckbook'
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 New checkbook
-              </Button>
+              </Button> */}
 
             </Box>
           </Toolbar>

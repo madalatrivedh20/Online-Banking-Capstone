@@ -30,7 +30,8 @@
       "email": "Sincere@april.biz",
       "password": "Bret",
       "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-1"
+      "secans": "dog-1",
+      "cheque": {}
     },
     {
       "id": 2,
@@ -62,7 +63,8 @@
         }
       ],
       "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-2"
+      "secans": "dog-2",
+      "cheque": {}
     },
     {
       "id": 3,
@@ -94,7 +96,8 @@
       "email": "Nathan@yesenia.net",
       "password": "Samantha",
       "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-3"
+      "secans": "dog-3",
+      "cheque": {}
     },
     {
       "id": 4,
@@ -126,7 +129,8 @@
       "email": "Julianne.OConner@kory.org",
       "password": "Karianne",
       "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-4"
+      "secans": "dog-4",
+      "cheque": {}
     },
     {
       "id": 5,
@@ -158,7 +162,8 @@
       "email": "Lucio_Hettinger@annie.ca",
       "password": "Kamren",
       "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-5"
+      "secans": "dog-5",
+      "cheque": {}
     },
     {
       "id": 6,
@@ -190,7 +195,8 @@
       "email": "Karley_Dach@jasper.info",
       "password": "Leopoldo_Corkery",
       "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-6"
+      "secans": "dog-6",
+      "cheque": {}
     },
     {
       "id": 7,
@@ -222,7 +228,8 @@
       "email": "Telly.Hoeger@billy.biz",
       "password": "Elwyn.Skiles",
       "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-7"
+      "secans": "dog-7",
+      "cheque": {}
     },
     {
       "id": 8,
@@ -254,7 +261,8 @@
       "email": "Sherwood@rosamond.me",
       "password": "Maxime_Nienow",
       "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-8"
+      "secans": "dog-8",
+      "cheque": {}
     },
     {
       "id": 9,
@@ -286,7 +294,8 @@
       "email": "Chaim_McDermott@dana.io",
       "password": "Delphine",
       "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-9"
+      "secans": "dog-9",
+      "cheque": {}
     },
     {
       "id": 10,
@@ -318,39 +327,31 @@
       ],
       "password": "Moriah.Stanton",
       "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-10"
+      "secans": "dog-10",
+      "cheque": {}
     },
     {
       "firstname": "Trivedh",
-      "lastname": "Madala",
       "acctype": "current",
       "accno": "6474930",
       "email": "madalatrivedh@gmail.com",
-      "balance": "5344",
-      "transactions": [
-        {
-          "id": "1",
-          "date": "12/11/2020",
-          "type": "savings",
-          "amount": "2000"
-        },
-        {
-          "id": "2",
-          "date": "15/11/2020",
-          "type": "savings",
-          "amount": "200"
-        },
-        {
-          "id": "3",
-          "date": "01/11/2020",
-          "type": "savings",
-          "amount": "6000"
-        }
-      ],
       "password": "hoi",
-      "id": 11,
       "sectype": "What is the name of your favorite pet?",
-      "secans": "dog-11"
+      "secans": "dog-11",
+      "transactions": [],
+      "balance": "30000$",
+      "cheque": {
+        "accno": "6",
+        "state": "Telangana",
+        "city": "Hyderabad",
+        "zipcode": "500046",
+        "address": "A-202, Aparna Sarovar Grande, Nallagandla, Hyderabad , Telangana, India",
+        "priority": "Urgent",
+        "chequebook_id": "252d9915",
+        "requested_date": "8/11/2022",
+        "issued_date": "11/11/2022"
+      },
+      "id": 11
     },
     {
       "firstname": "Trivedh",
@@ -381,7 +382,8 @@
       ],
       "sectype": "What is the name of your favorite pet?",
       "secans": "dog-12",
-      "id": 14
+      "id": 14,
+      "cheque": {}
     },
     {
       "firstname": "Trivedh",
@@ -392,7 +394,8 @@
       "sectype": "What high school did you attend?",
       "secans": "lfs",
       "transactions": [],
-      "id": 15
+      "id": 15,
+      "cheque": {}
     },
     {
       "firstname": "Roy",
@@ -404,7 +407,8 @@
       "secans": "golden",
       "transactions": [],
       "balance": "30000$",
-      "id": 16
+      "id": 16,
+      "cheque": {}
     }
   ]
 }
