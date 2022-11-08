@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { Box } from '@mui/system';
 import { Button, AppBar, MenuItem, Typography, Container, Toolbar, IconButton, Menu } from '@mui/material';
 
+
 import useAuth from '../AuthContext';
 
 const Navbar = () => {
@@ -23,14 +24,12 @@ const Navbar = () => {
               sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
-                fontFamily: 'monospace',
                 fontWeight: 700,
-                letterSpacing: '.3rem',
                 color: 'inherit',
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              VERTEX BANK GROUP
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -41,7 +40,7 @@ const Navbar = () => {
                 aria-haspopup="true"
                 color="inherit"
               >
-                {/* <MenuIcon /> */}
+
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -99,7 +98,7 @@ const Navbar = () => {
               <Button
                 key='balance_history'
                 href='/balance'
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', font: 'arial' }}
               >
                 Balance and History
               </Button>
@@ -107,7 +106,7 @@ const Navbar = () => {
               <Button
                 key='transfer_funds'
                 href='/transferfunds'
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', font: 'arial' }}
               >
                 Transfer funds
               </Button>
@@ -115,7 +114,7 @@ const Navbar = () => {
               <Button
                 key='new_FD'
                 href='newfd'
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', font: 'arial' }}
               >
                 New FD
               </Button>
@@ -124,7 +123,7 @@ const Navbar = () => {
               <Button
                 key='request_checkbook'
                 href='/requestcheckbook'
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', font: 'arial' }}
               >
                 New checkbook
               </Button>
