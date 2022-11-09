@@ -7,6 +7,7 @@ import useAppContext from '../AppStateContext';
 
 const Navbar = () => {
   const auth = useAppContext();
+  console.log(auth);
   const navigate = useNavigate();
 
   return (
@@ -141,22 +142,44 @@ const Navbar = () => {
                 </Button>
               </Link>
 
+              {" "}
+              {
+                auth.isAuthenticated ?
+                  (<Button
+                    key='logout'
+                    onClick={e => { auth.setIsAuthenticated(false); navigate('/'); }}
+                    sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
+                  >
+                    Logout
+                  </Button>)
+                  :
+                  (<Link to='/login'>
+                    <Button
+                      key='change_pin'
+                      onClick={e => navigate('/login')}
+                      sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
+                    >
+                      Login
+                    </Button>
+                  </Link>)
+              }
+
             </Box>
           </Toolbar>
         </Container>
       </AppBar >
 
-      {" "}
+      {/* {" "}
       {
         auth.isAuthenticated ?
-          <button onClick={e => { auth.setIsAuthenticated(false); navigate('/'); }}>
+          (<button onClick={e => { auth.setIsAuthenticated(false); navigate('/'); }}>
             Log out
-          </button>
+          </button>)
           :
-          <button onClick={e => navigate('/login')}>
+          (<button onClick={e => navigate('/login')}>
             Log In
-          </button>
-      }
+          </button>)
+      } */}
     </div >
   );
 };
