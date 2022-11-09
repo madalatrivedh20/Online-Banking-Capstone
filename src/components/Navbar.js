@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row', zIndex: '2000' }}>
 
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
