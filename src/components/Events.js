@@ -12,7 +12,7 @@ const handleClick = () => {
 };
 
 const EventsCard = ({ title, date, body }) => (
-    <React.Fragment>
+    <Card>
         <CardContent>
             <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
                 {title}
@@ -27,7 +27,7 @@ const EventsCard = ({ title, date, body }) => (
         <CardActions>
             <Button size="small" onClick={handleClick}>Register</Button>
         </CardActions>
-    </React.Fragment>
+    </Card>
 );
 
 
