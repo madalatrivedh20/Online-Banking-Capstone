@@ -7,11 +7,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import useAppContext from '../AppStateContext';
 
-function handleClick() {
-    alert('Registered!')
-}
+const handleClick = () => {
+    alert('Registered!');
+};
 
-function EventsCard({ title, date, body }) {
+const EventsCard = ({ title, date, body }) => (
     <React.Fragment>
         <CardContent>
             <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
@@ -28,10 +28,11 @@ function EventsCard({ title, date, body }) {
             <Button size="small" onClick={handleClick}>Register</Button>
         </CardActions>
     </React.Fragment>
-}
+);
 
 
-function Events() {
+
+const Events = () => (
     <div>
         <h1>Events</h1>
         <Box sx={{ minWidth: 275 }}>
@@ -49,6 +50,6 @@ function Events() {
             <EventsCard title="Credit card offers deal" date="Friday, 11 November" body="Get exciting credit card in just 4 steps, instantly! A wide variety of credit cards to suit your needs" />
         </Box>
 
-    </div>
-}
+    </div>);
+
 export default Events;

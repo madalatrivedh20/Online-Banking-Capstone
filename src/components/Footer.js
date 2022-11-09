@@ -4,8 +4,8 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 const Footer = () => {
     return (
         <MDBFooter color="blue" className="footer">
-            <container fluid className="text-center text-md-left">
-                <row>
+            <MDBContainer fluid className="text-center text-md-left">
+                <MDBRow>
                     <MDBCol md="6">
                         <h1 className="title">VERTEX BANK GROUP</h1>
                         <h3>
@@ -29,8 +29,8 @@ const Footer = () => {
                             </li>
                         </ul>
                     </MDBCol>
-                </row>
-            </container>
+                </MDBRow>
+            </MDBContainer>
             <div className="footer-copyright text-center py-3">
                 <MDBContainer fluid>
                     &copy; {new Date().getFullYear()} Copyright: <a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
@@ -38,6 +38,6 @@ const Footer = () => {
             </div>
         </MDBFooter>
     );
-}
+};
 
 export default Footer;
