@@ -151,7 +151,7 @@ const Navbar = () => {
 
               {" "}
               {
-                (auth.isAuthenticated || auth.issocialAuthenticated)?
+                (auth.isAuthenticated || auth.issocialAuthenticated) ?
                   (<Button
                     key='logout'
                     onClick={e => { auth.setIsAuthenticated(false); auth.setIssocialAuthenticated(false); navigate('/'); }}
@@ -175,18 +175,6 @@ const Navbar = () => {
           </Toolbar>
         </Container>
       </AppBar >
-
-      {/* {" "}
-      {
-        auth.isAuthenticated ?
-          (<button onClick={e => { auth.setIsAuthenticated(false); navigate('/'); }}>
-            Log out
-          </button>)
-          :
-          (<button onClick={e => navigate('/login')}>
-            Log In
-          </button>)
-      } */}
     </div >
   );
 };

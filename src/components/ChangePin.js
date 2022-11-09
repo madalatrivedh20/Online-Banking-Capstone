@@ -1,19 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import validator from 'validator';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
-
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-
-import FormHeader from './FormHeader';
+import { useNavigate } from 'react-router-dom';import FormHeader from './FormHeader';
 
 import useAppContext from '../AppStateContext';
 import { changeATMPIN } from '../service/api';
 
+//Function called to change the pin of the user logged in
 const ChangePin = () => {
   const navigate = useNavigate();
   const { user } = useAppContext();
@@ -29,9 +22,11 @@ const ChangePin = () => {
 
   const onChangeHandler = (e) => setData({ ...data, [e.target.name]: e.target.value });
 
+  //Validate the entered pin
   const checkValidations = (string) =>
     [validator.isNumeric, (str) => str.length === 4].reduce((preVal, func) => preVal && func(string), true);
-
+    
+  //Function invoked on submitting the request. Performs the validation and completes the request
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     if (!data.oldPin || !data.newPin || !data.confirmNewPin) return toast.error("PIN should not be empty");
@@ -63,60 +58,7 @@ const ChangePin = () => {
   };
 
   return (
-    // <Grid
-    //   container
-    //   direction="column"
-    //   alignItems="center"
-    //   justifyContent="center"
-    //   spacing={5}>
-    //   <Grid item sx={{ marginTop: '1rem', width: '100%' }}>
-    //     <Typography variant="h3" align="center">
-    //       Change ATM Pin
-    //     </Typography>
-    //   </Grid>
-
-    //   <Grid item xs={12} alignItems="center">
-    //     <TextField
-    //       required
-    //       label="Old PIN"
-    //       variant="standard"
-    //       name="oldPin"
-    //       onChange={onChangeHandler}
-    //       value={data.oldPin}
-    //       sx={{ display: 'block' }}
-    //     />
-    //   </Grid>
-
-    //   <Grid item xs={12}>
-    //     <TextField
-    //       required
-    //       label="New Pin"
-    //       variant="standard"
-    //       name="newPin"
-    //       value={data.newPin}
-    //       onChange={onChangeHandler}
-    //       sx={{ display: 'block' }}
-    //     />
-    //   </Grid>
-
-    //   <Grid item xs={12}>
-    //     <TextField
-    //       required
-    //       label="Confirm New PIN"
-    //       variant="standard"
-    //       name="confirmNewPin"
-    //       value={data.confirmNewPin}
-    //       onChange={onChangeHandler}
-    //       sx={{ display: 'block' }}
-    //     />
-    //   </Grid>
-
-    //   <Grid item xs={12}>
-    //     <Button variant="contained"
-    //       onClick={onSubmitHandler}
-    //       disabled={loading}>Change</Button>
-    //   </Grid>
-    // </Grid >
+    
     <div className="forms">
       <FormHeader title="Change PIN" />
       <div>

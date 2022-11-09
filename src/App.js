@@ -83,8 +83,8 @@ function App() {
             <Route exact path="/newcheckbook" element={
               <PrivateRoute>
                 <RequestChequebook />
-              </PrivateRoute>}/>
-             <Route exact path="/events" element={
+              </PrivateRoute>} />
+            <Route exact path="/events" element={
               <SocialRoute>
                 <Events />
               </SocialRoute>
