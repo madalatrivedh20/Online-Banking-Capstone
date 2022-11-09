@@ -1,8 +1,10 @@
-import React, { useRef } from 'react';
-import { toast } from 'react-toastify';
+import React, { useContext } from 'react';
 
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -33,7 +35,6 @@ const rows = [
 
 const BalanceAndHistory = () => {
   const { user } = useAppContext();
-  const toastId = useRef(null);
 
   const [userData, setUserData] = useState();
 
@@ -46,25 +47,30 @@ const BalanceAndHistory = () => {
 
   return userData && (
     <Box>
-      <h1 style={{ textAlign: "center", color: "white", paddingTop: '10px' }}>
+      <Typography variant="h3" align="center">
         Account Details
-      </h1>
+      </Typography>
 
       <Grid
         container
         direction="row"
         justifyContent="space-around"
-        alignItems="center"
-        sx={{ color: "#fff" }}>
+        alignItems="center">
 
-        <div>
-          <h2 className="SubTitle">Account Number</h2>
-          <h2>{userData.accno}</h2>
-        </div>
-        <div>
-          <h2 className="SubTitle">Balance</h2>
-          <h2>{userData.balance}$</h2>
-        </div>
+        <TextField
+          label="Account Number"
+          variant="standard"
+          disabled
+          value={userData.accno}
+          sx={{ display: 'block' }}
+        />
+        <TextField
+          label="Account Balance"
+          value={`${userData.balance}$`}
+          variant="standard"
+          disabled
+          sx={{ display: 'block' }}
+        />
       </Grid>
 
 
@@ -77,7 +83,6 @@ const BalanceAndHistory = () => {
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
-                <h2 style={{ paddingLeft: '15px' }}>Transactions</h2>
                 <TableRow>
                   <TableCell>Transcation Id</TableCell>
                   <TableCell align="right">TransDate</TableCell>

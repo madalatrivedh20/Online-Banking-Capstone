@@ -4,7 +4,7 @@
       "acctype": "Current",
       "accno": "1231",
       "transactions": [],
-      "balance": "NaN",
+      "balance": "30000$",
       "cheque": {
         "accno": "1",
         "state": "dfg",
@@ -25,7 +25,7 @@
       "email": "test@test.com",
       "password": "ashish",
       "secans": "blr",
-      "balance": "22736",
+      "balance": "30866",
       "cheque": {},
       "id": 2
     },
@@ -36,7 +36,7 @@
       "email": "test2@test.com",
       "password": "asd",
       "secans": "ash",
-      "balance": "35488",
+      "balance": "30033",
       "cheque": {},
       "id": 3
     }
@@ -116,51 +116,6 @@
       "amount": "232",
       "transactionDate": "09/112022",
       "id": 9
-    },
-    {
-      "userId": 2,
-      "accountNumber": "5555",
-      "accountType": "Current",
-      "transactionType": "Debit",
-      "amount": "333",
-      "transactionDate": "09/112022",
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "accountNumber": "1231",
-      "accountType": "Current",
-      "transactionType": "Credit",
-      "amount": "333",
-      "transactionDate": "09/112022",
-      "id": 11
-    },
-    {
-      "userId": 2,
-      "accountNumber": "5555",
-      "accountType": "Current",
-      "transactionType": "Debit",
-      "amount": "5455",
-      "transactionDate": "09/112022",
-      "id": 12
-    },
-    {
-      "userId": 3,
-      "accountNumber": "1231231",
-      "accountType": "Current",
-      "transactionType": "Credit",
-      "amount": "5455",
-      "transactionDate": "09/112022",
-      "id": 13
-    },
-    {
-      "userId": 2,
-      "accountNumber": "5555",
-      "accountType": "Current",
-      "transactionType": "Fixed Deposit",
-      "amount": "2342",
-      "transactionDate": "09/112022",
-      "id": 14
     }
   ],
   "ATMPINs": [

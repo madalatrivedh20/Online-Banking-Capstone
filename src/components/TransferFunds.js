@@ -152,16 +152,14 @@ const TransferFunds = () => {
               placeholder="Enter Remarks" />
           </div>
 
-          <div className="row" style={{ flexDirection: "row" }}>
+          <div className="row">
+            <label>Please agree to the terms and conditions</label>
             <input required
-              style={{ display: "inline", width: "min-content", marginLeft: '50px' }}
               value={checkbox}
               name="checkbox"
-              id="checkbox"
               type={"checkbox"}
               onChange={e => setCheckbox(e.target.checked)}
               placeholder="Enter Remarks" />
-            <label for="checkbox" style={{ paddingLeft: '5px', color: "black" }}>Please agree to the terms and conditions</label>
           </div>
 
           <div id="button" className="row">
@@ -170,8 +168,8 @@ const TransferFunds = () => {
           </div>
         </form>
 
-      </div >
-    </div >
+      </div>
+    </div>
   );
 };
 
