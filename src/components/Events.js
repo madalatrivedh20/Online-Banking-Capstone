@@ -12,20 +12,21 @@ const handleClick = () => {
 };
 
 const EventsCard = ({ title, date, body }) => (
-    <Card>
+    <Card sx={{ margin: 5, borderRadius: 2 }}>
         <CardContent>
-            <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+            <Typography sx={{ fontSize: 25, color: 'black' }} gutterBottom>
                 {title}
             </Typography>
-            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            <Typography sx={{ fontSize: 15, color: 'grey', mb: 1.5 }} >
                 {date}
             </Typography>
-            <Typography variant="body2">
+            <Typography sx={{ fontSize: 15, color: 'black' }}>
                 {body}
             </Typography>
+
         </CardContent>
         <CardActions>
-            <Button size="small" onClick={handleClick}>Register</Button>
+            <Button size="large" onClick={handleClick}>Register</Button>
         </CardActions>
     </Card>
 );
@@ -34,7 +35,9 @@ const EventsCard = ({ title, date, body }) => (
 
 const Events = () => (
     <div>
-        <h1>Events</h1>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
+            <h1>Events</h1>
+        </div>
         <Box sx={{ minWidth: 275 }}>
             <EventsCard title="Financial wellbeing" date="Friday, 11 November" body="Join us for a wonderful seminar on financial wellbeing on the 11th of November conducted by the asset manager of 
                 ICICI Bank, Mr. Suresh" />
