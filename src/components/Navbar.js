@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useAppContext, useNavigate } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,7 +15,11 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from '@mui/material';
 
-function ResponsiveAppBar() {
+function Navbar() {
+  const auth = useAppContext();
+  console.log(auth);
+  const navigate = useNavigate();
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -53,7 +58,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            VERTEX BANK GROUP
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -119,7 +124,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            VERTEX BANK GROUP
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Link to='/balance'>
@@ -172,10 +177,10 @@ function ResponsiveAppBar() {
               </Button>
             </Link>
 
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+          </Box >
+        </Toolbar >
+      </Container >
+    </AppBar >
   );
 }
-export default ResponsiveAppBar;
+export default Navbar;
