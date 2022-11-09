@@ -38,7 +38,7 @@ const NewFD = () => {
     // if (Number(data.amount) > Number(user.balance)) return toast.error("You have insufficient balance!");
 
     toastId.current = toast.loading("Creating Fixed Deposit...");
-    const { type, render } = await createFD({ ...data, userId: user.id });
+    const { type, render } = await createFD({ ...data, userId: user.id, accno: user.accno, acctype: user.acctype });
 
     toast.update(toastId.current, {
       type,

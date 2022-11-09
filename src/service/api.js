@@ -114,5 +114,17 @@ export const createFD = async (data) => {
       body: JSON.stringify({ ...debitUser, balance: (Number(debitUser.balance) - Number(data.amount)).toString() })
     });
 
+  const FDTransaction = createTransactionObject(data.userId, data.accno, data.acctype, "Fixed Deposit", data.amount);
+
+  const debitResponse = await fetch(`http://localhost:3000/transactions`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(FDTransaction),
+    });
+
+
   return { type: "success", render: "FD Created Successfully!" };
 };

@@ -1,6 +1,91 @@
 {
-  "users": [],
-  "transcations": [],
-  "ATMPINs": [],
+  "users": [
+    {
+      "firstname": "ash",
+      "acctype": "Current",
+      "accno": "1231",
+      "email": "ash@ash.com",
+      "password": "ashish",
+      "secans": "blr",
+      "balance": "27980",
+      "cheque": {},
+      "id": 1
+    },
+    {
+      "firstname": "test",
+      "acctype": "Current",
+      "accno": "5555",
+      "email": "test@test.com",
+      "password": "ashish",
+      "secans": "blr",
+      "balance": "30866",
+      "cheque": {},
+      "id": 2
+    }
+  ],
+  "transactions": [
+    {
+      "userId": 1,
+      "accountNumber": "1231",
+      "accountType": "Current",
+      "transactionType": "Debit",
+      "amount": "333",
+      "transactionDate": "09/112022",
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "accountNumber": "5555",
+      "accountType": "Current",
+      "transactionType": "Credit",
+      "amount": "333",
+      "transactionDate": "09/112022",
+      "id": 2
+    },
+    {
+      "transactionType": "Fixed Deposit",
+      "amount": "333",
+      "transactionDate": "09/112022",
+      "id": 3
+    },
+    {
+      "transactionType": "Fixed Deposit",
+      "amount": "11",
+      "transactionDate": "09/112022",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "accountNumber": "1231",
+      "accountType": "Current",
+      "transactionType": "Fixed Deposit",
+      "amount": "33",
+      "transactionDate": "09/112022",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "accountNumber": "1231",
+      "accountType": "Current",
+      "transactionType": "Fixed Deposit",
+      "amount": "777",
+      "transactionDate": "09/112022",
+      "id": 6
+    }
+  ],
+  "ATMPINs": [
+    {
+      "pin": "4055",
+      "accountNumber": "1231",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "pin": "4815",
+      "accountNumber": "5555",
+      "userId": 2,
+      "id": 2
+    }
+  ],
   "fixedDeposits": []
 }

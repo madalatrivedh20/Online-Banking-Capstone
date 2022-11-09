@@ -35,7 +35,6 @@ const TransferFunds = () => {
   useEffect(() => {
     (async () => {
       const response = await getCurrentUser(user.id);
-      console.log(response);
       setData({ ...data, fromAccNo: response.accno, accountType: response.acctype });
     })();
   }, []);
@@ -44,7 +43,6 @@ const TransferFunds = () => {
 
   const onBeneficiaryChange = (e) => {
     const user = allUsers.find(user => user.id === e.target.value);
-    console.log(user);
     setData({ ...data, beneficiary: user.id, beneficiaryAccNo: user.accno, beneficiaryIFSC: "IFSC", beneficiaryAccType: user.acctype });
   };
 
