@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import NewFD from './components/NewFD';
 import RequestChequebook from './components/RequestChequebook';
 import TransferFunds from './components/TransferFunds';
+import Footer from './components/Footer'
 import { useState, useEffect } from 'react';
 
 
@@ -82,6 +83,7 @@ function App() {
             </PrivateRoute>
           } />
         </Routes>
+        <Footer />
       </Router>
     </>
   );
