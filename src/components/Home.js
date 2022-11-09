@@ -1,28 +1,81 @@
-import React, { useRef } from 'react';
-import '../style/Home.css';
-import Navbar from './Navbar';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Link as Scroll } from 'react-scroll';
 
-const Home = () => {
-  const menuRef = useRef();
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '120vh',
+    fontFamily: 'Nunito',
+  },
+  appbar: {
+    // background: 'none',
+    color: '#000',
+  },
+  appbarWrapper: {
+    width: '80%',
+    margin: '0 auto',
+  },
+  appbarTitle: {
+    flexGrow: '1',
+  },
+  icon: {
+    color: '#fff',
+    fontSize: '2rem',
+  },
+  colorText: {
+    color: '#5AFF3D',
+  },
+  container: {
+    textAlign: 'center',
+  },
+  title: {
+    color: '#5AFF3D',
+    fontSize: '4.5rem',
+    
+  },
+  goDown: {
+    color: '#5AFF3D',
+    fontSize: '4rem',
+  },
+}));
+export default function Header() {
+  const classes = useStyles();
+  const [checked, setChecked] = useState(false);
+  useEffect(() => {
+    setChecked(true);
+  }, []);
   return (
-    <div>
-      <div id="menu" ref={menuRef}>
-        <div id="menu-items">
-          {[{ text: "Home", to: "/" }, { text: "About", to: "/" }, { text: "Login", to: '/login' }]
-            .map((element, index) =>
-              <Link
-                to={`${element.to}`}
-                className="menu-item"
-                onMouseOver={e => menuRef.current.dataset.activeIndex = index}>
-                {element.text}
-              </Link>)}
+    <div className={classes.root} id="header">
+      <AppBar className={classes.appbar} elevation={0}>
+        <Toolbar className={classes.appbarWrapper}>
+          <h1 className={classes.appbarTitle}>
+            XYZ<span className={classes.colorText}>Bank.</span>
+          </h1>
+        </Toolbar>
+      </AppBar>
+
+      <Collapse
+        in={checked}
+        {...(checked ? { timeout: 1000 } : {})}
+        collapsedHeight={50}
+      >
+        <div className={classes.container}>
+          <h1 className={classes.title}>
+            Welcome to <br />
+            <span className={classes.colorText}>Online Banking Application</span>
+          </h1>
+          <Scroll to="products" smooth={true}>
+            <IconButton>
+              <ExpandMoreIcon className={classes.goDown} />
+            </IconButton>
+          </Scroll>
         </div>
-        {/* <div id="menu-background-pattern"></div> */}
-        {/* <div id="menu-background-image"></div> */}
-      </div>
+      </Collapse>
     </div>
   );
-};
-
-export default Home;
+}
