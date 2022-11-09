@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useAppContext, useNavigate } from 'react';
+import useAppContext from '../AppStateContext';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import { Link } from '@mui/material';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Navbar() {
   const auth = useAppContext();
@@ -166,6 +166,16 @@ function Navbar() {
               </Button>
             </Link>
 
+            <Link to='/events'>
+              <Button
+                key='events'
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
+              >
+                Events
+              </Button>
+            </Link>
+
             <Link to='/changepin'>
               <Button
                 key='change_pin'
@@ -175,6 +185,8 @@ function Navbar() {
                 CHANGEPIN
               </Button>
             </Link>
+
+
 
             {
               (auth.isAuthenticated || auth.issocialAuthenticated) ?
