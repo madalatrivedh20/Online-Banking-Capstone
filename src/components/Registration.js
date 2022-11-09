@@ -116,7 +116,7 @@ function Registration() {
 
   return (
     <div>
-      <div id="loginform">
+      <div className="forms">
         <FormHeader title="Registration Form" />
 
 

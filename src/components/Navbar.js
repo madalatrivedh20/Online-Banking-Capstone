@@ -7,7 +7,6 @@ import useAppContext from '../AppStateContext';
 
 const Navbar = () => {
   const auth = useAppContext();
-  console.log(auth);
   const navigate = useNavigate();
 
   return (

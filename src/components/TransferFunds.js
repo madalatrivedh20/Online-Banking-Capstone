@@ -9,6 +9,8 @@ import Container from '@mui/material/Container';
 import TextField from '@mui/material/TextField';
 import { FormControl, Select, InputLabel, MenuItem, FormGroup, FormControlLabel, Checkbox, Button } from '@mui/material';
 
+import FormHeader from './FormHeader';
+
 import useAppState from '../AppStateContext';
 import { transferFunds, getCurrentUser } from '../service/api';
 import { useNavigate } from 'react-router-dom';
@@ -26,11 +28,12 @@ const TransferFunds = () => {
     beneficiaryIFSC: "IFSC",
     accountType: "",
     amount: "",
-    remarks: "",
-    checkbox: false
+    remarks: ""
   });
 
   const [loading, setLoading] = useState(false);
+
+  const [checkbox, setCheckbox] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -42,18 +45,19 @@ const TransferFunds = () => {
   const onChangeHandler = (e) => setData({ ...data, [e.target.name]: e.target.value });
 
   const onBeneficiaryChange = (e) => {
-    const user = allUsers.find(user => user.id === e.target.value);
+    const user = allUsers.find(user => user.id === Number(e.target.value));
     setData({ ...data, beneficiary: user.id, beneficiaryAccNo: user.accno, beneficiaryIFSC: "IFSC", beneficiaryAccType: user.acctype });
   };
 
-  const onClickHandler = async (e) => {
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
     if (!validator.isNumeric(data.fromAccNo) || !validator.isNumeric(data.beneficiaryAccNo)) return toast.error("Invalid Account Number");
     if (!data.beneficiary) return toast.error("Please Select Beneficiary");
     if (!data.accountType) return toast.error("Please Select Account Type");
     if (!validator.isAlphanumeric(data.beneficiaryIFSC)) return toast.error("Invalid Beneficiary IFSC Code");
     if (!validator.isNumeric(data.amount)) return toast.error("Invalid Amount");
     if (!data.remarks) return toast.error("Invalid Remarks");
-    if (!data.checkbox) return toast.error("Please agree to terms and conditions");
+    if (!checkbox) return toast.error("Please agree to terms and conditions");
 
     toastId.current = toast.loading("Transacting...");
     setLoading(true);
@@ -79,143 +83,93 @@ const TransferFunds = () => {
   };
 
   return (
-    <Grid
-      container
-      direction="column"
-      alignItems="center"
-      justifyContent="center"
-      spacing={5}>
-      <Grid item sx={{ marginTop: '1rem', width: '100%' }}>
-        <Typography variant="h3" align="center">
-          Fund Transfer
-        </Typography>
-      </Grid>
+    <div className="forms">
+      <FormHeader title="Transfer Funds" />
+      <div>
+        <form onSubmit={onSubmitHandler}>
+          <div className="row">
+            <label>From Account Number</label>
+            <input disbaled
+              required
+              type="text"
+              placeholder="From Account Number"
+              value={data.fromAccNo}
+              name="fromAccNo"
+              onChange={onChangeHandler} />
+          </div>
 
-      <Grid item xs={12} alignItems="center">
-        <TextField
-          required
-          label="From Account"
-          variant="standard"
-          disabled
-          value={data.fromAccNo}
-          name="fromAccNo"
-          onChange={onChangeHandler}
-          sx={{ display: 'block' }}
-        />
-      </Grid>
+          <div className="row">
+            <label>Beneficiary</label>
+            <select value={data.beneficiary}
+              name="beneficiary"
+              onChange={onBeneficiaryChange}>
+              <option value={0}>Select your Beneficiary</option>
+              {allUsers
+                .filter(({ id }) => user.id !== id)
+                .map((user) => <option key={user.id} value={user.id}>{user.firstname}</option>)}
+            </select>
+          </div>
 
-      <Grid item xs={12} sx={{ minWidth: '250px' }}>
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Beneficiary</InputLabel>
-          <Select
-            label="Beneficiary"
-            value={data.beneficiary}
-            name="beneficiary"
-            onChange={onBeneficiaryChange}
-          >
-            {/* <MenuItem value={"beneficiary-1"}>Beneficiary 1</MenuItem>
-            <MenuItem value={"beneficiary-2"}>Beneficiary 2</MenuItem>
-            <MenuItem value={"beneficiary-3"}>Beneficiary 3</MenuItem> */}
-            {allUsers
-              .filter(({ id }) => user.id !== id)
-              .map((user) => <MenuItem key={user.id} value={user.id}>{user.firstname}</MenuItem>)}
-          </Select>
-        </FormControl>
-      </Grid>
+          <div className="row">
+            <label>Beneficiary Account Number</label>
+            <input required
+              disabled type="text"
+              value={data.beneficiaryAccNo}
+              name="beneficiaryAccNo"
+              onChange={onChangeHandler} />
+          </div>
 
-      <Grid item xs={12} alignItems="center">
-        <TextField
-          required
-          label="Beneficiary Account Number"
-          variant="standard"
-          disabled
-          value={data.beneficiaryAccNo}
-          name="beneficiaryAccNo"
-          onChange={onChangeHandler}
-          sx={{ display: 'block' }}
-        />
-      </Grid>
+          <div className="row">
+            <label>Beneficiary IFSC Code</label>
+            <input required type="text" placeholder="Enter your City" disabled
+              value={data.beneficiaryIFSC}
+              name="beneficiaryIFSC"
+              onChange={onChangeHandler} />
+          </div>
 
-      <Grid item xs={12} alignItems="center">
-        <TextField
-          required
-          label="Beneficiary IFSC Code"
-          variant="standard"
-          disabled
-          value={data.beneficiaryIFSC}
-          name="beneficiaryIFSC"
-          onChange={onChangeHandler}
-          sx={{ display: 'block' }}
-        />
-      </Grid>
+          <div className="row">
+            <label>Account Type</label>
+            <input required type="text" disabled placeholder="Enter your Pincode"
+              value={data.accountType}
+              name="accountType"
+              onChange={onChangeHandler} />
+          </div>
 
-      {/* <Grid item xs={12} sx={{ minWidth: '250px' }}>
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Account Type</InputLabel>
-          <Select
-            label="Account Type"
-            value={data.accountType}
-            name="accountType"
-            onChange={onChangeHandler}
-          >
-            <MenuItem value={"account-type-1"}>Account Type 1</MenuItem>
-            <MenuItem value={"account-type-2"}>Account Type 2</MenuItem>
-            <MenuItem value={"account-type-3"}>Account Type 3</MenuItem>
-          </Select>
-        </FormControl>
-      </Grid> */}
+          <div className="row">
+            <label>Amount</label>
+            <input required type="textarea" value={data.amount}
+              name="amount"
+              onChange={onChangeHandler}
+              placeholder={"Enter Amount"} />
+          </div>
 
-      <Grid item xs={12}>
-        <TextField
-          required
-          label="Account Type"
-          disabled
-          variant="standard"
-          value={data.accountType}
-          name="accountType"
-          onChange={onChangeHandler}
-          sx={{ display: 'block' }}
-        />
-      </Grid>
+          <div className="row">
+            <label>Amount</label>
+            <input required type="textarea"
+              value={data.remarks}
+              name="remarks"
+              onChange={onChangeHandler}
+              placeholder="Enter Remarks" />
+          </div>
 
-      <Grid item xs={12}>
-        <TextField
-          required
-          label="Amount"
-          type="number"
-          variant="standard"
-          value={data.amount}
-          name="amount"
-          onChange={onChangeHandler}
-          sx={{ display: 'block' }}
-        />
-      </Grid>
+          <div className="row">
+            <label>Please agree to the terms and conditions</label>
+            <input required
+              value={checkbox}
+              name="checkbox"
+              type={"checkbox"}
+              onChange={e => setCheckbox(e.target.checked)}
+              placeholder="Enter Remarks" />
+          </div>
 
-      <Grid item xs={12}>
-        <TextField
-          required
-          label="Remarks"
-          variant="standard"
-          value={data.remarks}
-          name="remarks"
-          onChange={onChangeHandler}
-          sx={{ display: 'block' }}
-        />
-      </Grid>
+          <div id="button" className="row">
+            <button>Transfer Funds</button>
 
-      <Grid item xs={12}>
-        <FormGroup>
-          <FormControlLabel control={<Checkbox
-            value={data.checkbox}
-            onChange={e => setData({ ...data, checkbox: e.target.checked })} />}
-            label="I have read and accepted the terms and conditions" />
-        </FormGroup>
-      </Grid>
+          </div>
+        </form>
 
-      <Grid item xs={12}>
-        <Button variant="contained" onClick={onClickHandler} disabled={loading}>Transfer Funds</Button>
-      </Grid>
-    </Grid>
+      </div>
+    </div>
   );
 };
 

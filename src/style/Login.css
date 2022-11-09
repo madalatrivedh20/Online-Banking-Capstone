@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Work+Sans:400,500,600,700&display=swap');
 
-body{
+body {
   background: rgb(255, 4, 0);
-  background: linear-gradient(135deg, rgb(255, 19, 2) 0%,     rgb(232, 190, 1) 100%);
-  font-family: "work sans";
+  background: linear-gradient(
+    135deg,
+    rgb(255, 19, 2) 0%,
+    rgb(232, 190, 1) 100%
+  );
+  font-family: 'work sans';
 }
-
 
 * {
   box-sizing: border-box;
@@ -19,7 +22,7 @@ body{
 }
 .columns {
   display: grid;
-  grid-template-columns: 50% 50%;	
+  grid-template-columns: 50% 50%;
 }
 
 .left {
@@ -32,12 +35,12 @@ body{
 
 /* Clear floats after the columns */
 .row:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
 .fa-twitter {
-  background: #55ACEE;
+  background: #55acee;
   color: white;
 }
 .fa {
@@ -47,21 +50,21 @@ body{
   height: 60px;
   text-align: left;
   text-decoration: none;
-  margin:5px 2px;
+  margin: 5px 2px;
   border-radius: 5px;
 }
 
 .fa:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .fa-facebook {
-  background: #3B5998;
+  background: #3b5998;
   color: white;
 }
 
 .fa-twitter {
-  background: #55ACEE;
+  background: #55acee;
   color: white;
 }
 
@@ -69,47 +72,47 @@ body{
   background: #dd4b39;
   color: white;
 }
-html{
+html {
   font-size: 80%;
 }
 .container {
-    padding: 16px;
-    padding-top: 20px;
-  }
-#loginform{
+  padding: 16px;
+  padding-top: 20px;
+}
+.forms {
   max-width: 500px;
   min-width: 300px;
   max-height: 800px;
   width: 800px;
   height: 1000%;
   margin: 100px auto;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 25px;
 }
-#message{
-    text-align: center;
-    width: 60%;
-    height: 0%;
-    
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    font-size: 10px;
+#message {
+  text-align: center;
+  width: 60%;
+  height: 0%;
+
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
 }
 
 .imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-    padding-top: 30px;
-  }
-  
-  img.avatar {
-    width: 40%;
-    border-radius: 50%;
-  }
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+  padding-top: 30px;
+}
 
-#headerTitle{
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+#headerTitle {
   text-align: center;
   font-family: 'open sans', sans-serif;
   padding: 2rem 0;
@@ -117,96 +120,96 @@ html{
   font-size: 2rem;
 }
 
-.row{
+.row {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 2rem;
   max-width: 100%;
-  
 }
 
-.row input{
+.row input {
   width: 80%;
   box-sizing: border-box;
-	border: none;
+  border: none;
   font-size: 1.3rem;
   padding-left: 1 rem;
   padding-bottom: 1rem;
-  box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+  box-shadow: inset 0px -3px 0px 0px rgba(187, 187, 187, 0.2);
   transition: box-shadow 0.2s ease-in;
 }
 
-.row select{
+.row select {
   width: 80%;
   box-sizing: border-box;
-	border: none;
+  border: none;
   font-size: 1.3rem;
   padding-left: 1 rem;
   padding-bottom: 1rem;
-  box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+  box-shadow: inset 0px -3px 0px 0px rgba(187, 187, 187, 0.2);
   transition: box-shadow 0.2s ease-in;
 }
 
-.row input:focus{
-   box-shadow: inset 0px -3px 0px 0px rgba(34,193,195,0.7);
-   outline: none;
+.row input:focus {
+  box-shadow: inset 0px -3px 0px 0px rgba(34, 193, 195, 0.7);
+  outline: none;
 }
 
-.row input::-webkit-input-placeholder{
+.row input::-webkit-input-placeholder {
   opacity: 1;
   transition: opacity 0.25s ease-out;
 }
 
 .row input:hover::-webkit-input-placeholder,
-.row input:focus::-webkit-input-placeholder{
+.row input:focus::-webkit-input-placeholder {
   opacity: 0;
 }
 
-.row label{
+.row label {
   align-self: start;
   padding-left: 4.5rem;
   padding-bottom: 0.5rem;
-  color: rgba(187,187,187,0.9);
+  color: rgba(187, 187, 187, 0.9);
 }
 
-.row button{
+.row button {
   border-radius: 25px;
   width: 80%;
   height: 40px;
   font-size: 1.3rem;
   color: white;
   font-weight: 700;
-  background: rgb(34,193,195);
-  background: linear-gradient(90deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    90deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
   border: 0px;
   cursor: pointer;
   transition: opacity 0.25s ease-out;
 }
 
-.row button:hover{
+.row button:hover {
   opacity: 0.8;
 }
 
-#button{
+#button {
   padding-bottom: 1.5rem;
 }
 
-
-#iconGroup{
+#iconGroup {
   display: flex;
   justify-content: center;
   padding: 2rem 0;
 }
 
-#iconGroup a{
+#iconGroup a {
   margin: 0 0.6rem;
 }
 
 #alternativeLogin {
-   text-align: center;
-   padding-top: 2rem;
-   margin-top: 1.5rem;
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 1.5rem;
 }
-
-

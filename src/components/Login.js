@@ -141,7 +141,7 @@ function Login() {
   };
 
   return (
-    <div id="loginform">
+    <div className="forms">
       <FormHeader title="Login" />
       <div>
         <form onSubmit={submitHandler}>
