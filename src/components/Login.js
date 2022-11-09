@@ -1,4 +1,5 @@
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightLong, faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 
 import '../style/Login.css';
 import { React, useState, useEffect } from 'react';
@@ -121,9 +122,9 @@ function Login() {
           <div id="button" className="row">
             <div style={{ "textAlign": "center", "marginLeft": "0px" }}>
               <ul>
-                <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithFaceBook} class="fa fa-facebook"></a></li>
-                <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithGoogle} class="fa fa-google"></a></li>
-                <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithGoogle} class="fa fa-twitter"></a></li>
+                <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithFaceBook} class="fa-brands fa-facebook"></a></li>
+                <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithGoogle} class="fa-brands fa-google"></a></li>
+                <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithGoogle} class="fa-brands fa-twitter"></a></li>
 
               </ul>
             </div>

@@ -1,81 +1,79 @@
-import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Link as Scroll } from 'react-scroll';
+import React, { useState, useRef } from 'react';
+import styles from './Home.module.css';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '120vh',
-    fontFamily: 'Nunito',
-  },
-  appbar: {
-    // background: 'none',
-    color: '#000',
-  },
-  appbarWrapper: {
-    width: '80%',
-    margin: '0 auto',
-  },
-  appbarTitle: {
-    flexGrow: '1',
-  },
-  icon: {
-    color: '#fff',
-    fontSize: '2rem',
-  },
-  colorText: {
-    color: '#5AFF3D',
-  },
-  container: {
-    textAlign: 'center',
-  },
-  title: {
-    color: '#5AFF3D',
-    fontSize: '4.5rem',
-    
-  },
-  goDown: {
-    color: '#5AFF3D',
-    fontSize: '4rem',
-  },
-}));
-export default function Header() {
-  const classes = useStyles();
-  const [checked, setChecked] = useState(false);
-  useEffect(() => {
-    setChecked(true);
-  }, []);
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightLong, faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
+
+const slides = [
+  {
+    title: "Banking For A New World",
+    text: "We at Vertex Bank belive in delivering the best services to our customers in this new and growing world",
+    imageUrl: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+  }
+];
+
+const Home = () => {
+  const slideRefs = useRef([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleLeftClick = () => {
+    const nextIndex = activeIndex - 1 >= 0 ? activeIndex - 1 : slides.length - 1;
+
+    const currentSlide = slideRefs.current[activeIndex];
+    const nextSlide = slideRefs.current[nextIndex];
+
+    currentSlide.setAttribute("data-status", "after");
+
+    nextSlide.setAttribute("data-status", "becoming-active-from-before");
+
+    setTimeout(() => {
+      nextSlide.setAttribute("data-status", "active");
+      setActiveIndex(nextIndex);
+    });
+  };
+
+  const handleRightClick = () => {
+    const nextIndex = activeIndex + 1 <= slides.length - 1 ? activeIndex + 1 : 0;
+
+    const currentSlide = slideRefs.current[activeIndex];
+    const nextSlide = slideRefs.current[nextIndex];
+
+    currentSlide.setAttribute("data-status", "before");
+
+    nextSlide.setAttribute("data-status", "becoming-active-from-after");
+
+    setTimeout(() => {
+      nextSlide.setAttribute("data-status", "active");
+      setActiveIndex(nextIndex);
+    });
+  };
+
+  console.log(slideRefs.current);
   return (
-    <div className={classes.root} id="header">
-      <AppBar className={classes.appbar} elevation={0}>
-        <Toolbar className={classes.appbarWrapper}>
-          <h1 className={classes.appbarTitle}>
-            XYZ<span className={classes.colorText}>Bank.</span>
-          </h1>
-        </Toolbar>
-      </AppBar>
-
-      <Collapse
-        in={checked}
-        {...(checked ? { timeout: 1000 } : {})}
-        collapsedHeight={50}
-      >
-        <div className={classes.container}>
-          <h1 className={classes.title}>
-            Welcome to <br />
-            <span className={classes.colorText}>Online Banking Application</span>
-          </h1>
-          <Scroll to="products" smooth={true}>
-            <IconButton>
-              <ExpandMoreIcon className={classes.goDown} />
-            </IconButton>
-          </Scroll>
-        </div>
-      </Collapse>
-    </div>
+    <>
+      <main style={{ height: '100vh', marginBottom: '100px', fontSize: "150%" }}>
+        {[...slides, ...slides].map((ele, ind) => (
+          <article key={ind} data-index={ind} data-status={ind === 0 ? "active" : "inactive"} ref={e => slideRefs.current[ind] = e}>
+            <div style={{ backgroundImage: `url(${ele.imageUrl})` }} className={`${styles.articleimagesection} ${styles.articlesection}`}></div>
+            <div className={`${styles.articledescriptionsection} ${styles.articlesection}`}>
+              <p>{ele.text}</p>
+            </div>
+            <div className={`${styles.articletitlesection} ${styles.articlesection}`}>
+              <h2>{ele.title}</h2>
+            </div>
+            <div className={`${styles.articlenavsection} ${styles.articlesection}`}>
+              <button className={`${styles.articlenavbutton}`} type="button" onClick={handleLeftClick}>
+                <FontAwesomeIcon icon={faArrowLeftLong} />
+              </button>
+              <button className={`${styles.articlenavbutton}`} type="button" onClick={handleRightClick}>
+                <FontAwesomeIcon icon={faArrowRightLong} />
+              </button>
+            </div>
+          </article>
+        ))}
+      </main>
+    </>
   );
-}
+};
+
+export default Home;
