@@ -13,6 +13,8 @@ import RequestChequebook from './components/RequestChequebook';
 import TransferFunds from './components/TransferFunds';
 import Footer from './components/Footer'
 import { useState, useEffect } from 'react';
+import Events from './components/Events';
+import SocialRoute from './components/SocialRoute';
 
 
 import PrivateRoute from './components/PrivateRoute';
@@ -81,6 +83,11 @@ function App() {
             <PrivateRoute>
               <RequestChequebook />
             </PrivateRoute>
+          } />
+          <Route exact path="/events" element={
+            <SocialRoute>
+              <Events />
+            </SocialRoute>
           } />
         </Routes>
         <Footer />

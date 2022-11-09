@@ -124,12 +124,20 @@ const Navbar = () => {
                 </Button>
               </Link>
 
-              <Link to='/requestcheckbook'>
+              <Link to='/newcheckbook'>
                 <Button
                   key='request_checkbook'
                   sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
                 >
                   New checkbook
+                </Button>
+              </Link>
+              <Link to='/events'>
+                <Button
+                  key='events'
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
+                >
+                  Events
                 </Button>
               </Link>
 
@@ -144,10 +152,10 @@ const Navbar = () => {
 
               {" "}
               {
-                auth.isAuthenticated ?
+                (auth.isAuthenticated || auth.issocialAuthenticated)?
                   (<Button
                     key='logout'
-                    onClick={e => { auth.setIsAuthenticated(false); navigate('/'); }}
+                    onClick={e => { auth.setIsAuthenticated(false); auth.setIssocialAuthenticated(false); navigate('/'); }}
                     sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
                   >
                     Logout

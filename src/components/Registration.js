@@ -66,6 +66,9 @@ function Registration() {
     if (!validator.isAlpha(data['acctype'][0])) return toast.error("Invalid Account type");
     if (!validator.isNumeric(data['accno'][0])) return toast.error("Invalid Account Number");
     if (!validator.isEmail(data['email'][0])) return toast.error("Please enter a valid Email");
+   
+ 
+    
 
     // CHECK IF ACC NO ALRDY EXISTS
 
@@ -73,6 +76,14 @@ function Registration() {
     let password_str = data['password'][0];
     let repassword_str = data['repassword'][0];
     let checkemail = (validator.isEmail(email_str));
+    
+    if (!validator.isStrongPassword(password_str, {
+      minLength: 8, minLowercase: 1,
+      minUppercase: 1, minNumbers: 1, minSymbols: 1
+    })) {
+     return toast.error("Please ensure that a password contains  : minlength : 8 characters, min 1 lowercase, min 1 upeercase, min 1 number  and min 1 symbol")
+    }
+    
 
 
     if (checkemail) {
@@ -114,7 +125,7 @@ function Registration() {
             <div class="column-1">
               <div className="row">
                 <label>First Name</label>
-                <input required type="text" name="firstname" placeholder="Enter your First Name" value={data.firstname} onChange={changeHandler} />
+                <input  autofocus required type="text" name="firstname" placeholder="Enter your First Name" value={data.firstname} onChange={changeHandler} />
               </div>
 
               {/* <div className="row">

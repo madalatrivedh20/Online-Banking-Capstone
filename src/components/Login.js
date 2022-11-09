@@ -8,10 +8,14 @@ import validator from 'validator';
 /* import pic from '../style/img_avatar2.png'; */
 import pic from '../style/download.png';
 
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider, signInWithPopup,FacebookAuthProvider } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics";
+
 import useAppContext from '../AppStateContext';
 
-import { signInWithFaceBook } from './Firebase';
-import { signInWithGoogle } from './Firebase';
+/*import { signInWithFaceBook } from './Firebase';
+import { signInWithGoogle } from './Firebase';*/
 
 const FormHeader = props => (
   <div>
@@ -24,7 +28,7 @@ const FormHeader = props => (
 
 function Login() {
 
-  const { setIsAuthenticated, setUser } = useAppContext();
+  const { setIsAuthenticated, setUser,issocialAuthenticated, setIssocialAuthenticated } = useAppContext();
 
   const navigate = useNavigate();
 
@@ -41,7 +45,42 @@ function Login() {
 
   };
 
+  const firebaseConfig = {
+    apiKey: "AIzaSyAQaUwSVM1OSQoh5uS7qiniQO4beSNb1JM",
+    authDomain: "online-banking-2.firebaseapp.com",
+    projectId: "online-banking-2",
+    storageBucket: "online-banking-2.appspot.com",
+    messagingSenderId: "647396172156",
+    appId: "1:647396172156:web:d876621f4a8bb6b12744f9",
+    measurementId: "G-8VLQ6LQBVN"
+  };
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const auth = getAuth(app);
+  
+  const go_provider = new GoogleAuthProvider();
+  const fb_provider = new FacebookAuthProvider();
 
+   const signInWithGoogle = () => {
+    signInWithPopup(auth, go_provider)
+      .then((result) => {
+        const name = result.user.displayName;
+        const email = result.user.email;
+        const profilePic = result.user.photoURL;
+  
+        localStorage.setItem("name", name);
+        localStorage.setItem("email", email);
+        localStorage.setItem("profilePic", profilePic);
+        setIssocialAuthenticated(true);
+        navigate('/')
+;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const getUsers = async () => {
     try {
@@ -66,6 +105,7 @@ function Login() {
     let email_str = data['email'][0];
     let password_str = data['password'][0];
     let checkemail = (validator.isEmail(email_str));
+
     function checkemailpassofuser(obj) {
       let flag = 0;
       if (obj.email === email_str && obj.password === password_str) {
@@ -107,7 +147,7 @@ function Login() {
         <form onSubmit={submitHandler}>
           <div className="row">
             <label>Email</label>
-            <input required type="text" name="email" placeholder="Enter your Email" value={data.email} onChange={changeHandler} />
+            <input autofocus required type="text" name="email" placeholder="Enter your Email" value={data.email} onChange={changeHandler} />
           </div>
           <div className="row">
             <label>Password</label>
@@ -121,7 +161,7 @@ function Login() {
           <div id="button" className="row">
             <div style={{ "textAlign": "center", "marginLeft": "0px" }}>
               <ul>
-                <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithFaceBook} class="fa fa-facebook"></a></li>
+               {/*<li style={{ "display": "inline" }}> <a href="#" onClick={signInWithFaceBook} class="fa fa-facebook"></a></li>*/}
                 <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithGoogle} class="fa fa-google"></a></li>
                 <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithGoogle} class="fa fa-twitter"></a></li>
 
