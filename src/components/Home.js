@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import '../style/Home.css';
-
+import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 
 const Home = () => {

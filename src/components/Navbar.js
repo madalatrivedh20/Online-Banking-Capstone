@@ -7,12 +7,13 @@ import useAppContext from '../AppStateContext';
 
 const Navbar = () => {
   const auth = useAppContext();
+  console.log(auth);
   const navigate = useNavigate();
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row', zIndex: '2000' }}>
 
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
@@ -23,14 +24,12 @@ const Navbar = () => {
               sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
+                fontWeight: 600,
                 color: 'inherit',
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              VERTEX BANK GROUP
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -41,7 +40,7 @@ const Navbar = () => {
                 aria-haspopup="true"
                 color="inherit"
               >
-                {/* <MenuIcon /> */}
+
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -100,7 +99,7 @@ const Navbar = () => {
               <Link to='/balance'>
                 <Button
                   key='balance_history'
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
                 >
                   Balance and History
                 </Button>
@@ -110,7 +109,7 @@ const Navbar = () => {
                 <Button
                   key='transfer_funds'
 
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
                 >
                   Transfer funds
                 </Button>
@@ -119,7 +118,7 @@ const Navbar = () => {
               <Link to='/newfd'>
                 <Button
                   key='new_FD'
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
                 >
                   New FD
                 </Button>
@@ -128,7 +127,7 @@ const Navbar = () => {
               <Link to='/requestcheckbook'>
                 <Button
                   key='request_checkbook'
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
                 >
                   New checkbook
                 </Button>
@@ -137,28 +136,51 @@ const Navbar = () => {
               <Link to='/changepin'>
                 <Button
                   key='change_pin'
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
                 >
                   CHANGEPIN
                 </Button>
               </Link>
+
+              {" "}
+              {
+                auth.isAuthenticated ?
+                  (<Button
+                    key='logout'
+                    onClick={e => { auth.setIsAuthenticated(false); navigate('/'); }}
+                    sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
+                  >
+                    Logout
+                  </Button>)
+                  :
+                  (<Link to='/login'>
+                    <Button
+                      key='change_pin'
+                      onClick={e => navigate('/login')}
+                      sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
+                    >
+                      Login
+                    </Button>
+                  </Link>)
+              }
 
             </Box>
           </Toolbar>
         </Container>
       </AppBar >
 
-      {" "}
-      {auth.isAuthenticated ?
-        <button onClick={e => { auth.setIsAuthenticated(false); navigate('/'); }}>
-          Log out
-        </button>
-        :
-        <button onClick={e => navigate('/login')}>
-          Log In
-        </button>
-      }
-    </div>
+      {/* {" "}
+      {
+        auth.isAuthenticated ?
+          (<button onClick={e => { auth.setIsAuthenticated(false); navigate('/'); }}>
+            Log out
+          </button>)
+          :
+          (<button onClick={e => navigate('/login')}>
+            Log In
+          </button>)
+      } */}
+    </div >
   );
 };
 

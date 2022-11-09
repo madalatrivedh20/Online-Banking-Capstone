@@ -38,8 +38,6 @@ const BalanceAndHistory = () => {
 
   const [userData, setUserData] = useState();
 
-  console.log(userData);
-
   useEffect(() => {
     (async () => {
       const response = await getCurrentUser(user.id);
