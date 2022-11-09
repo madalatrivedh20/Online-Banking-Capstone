@@ -3,11 +3,10 @@ import { useNavigate, Link } from 'react-router-dom';
 import { Box } from '@mui/system';
 import { Button, AppBar, MenuItem, Typography, Container, Toolbar, IconButton, Menu } from '@mui/material';
 
-
-import useAuth from '../AuthContext';
+import useAppContext from '../AppStateContext';
 
 const Navbar = () => {
-  const auth = useAuth();
+  const auth = useAppContext();
   const navigate = useNavigate();
 
   return (
@@ -44,6 +43,7 @@ const Navbar = () => {
               </IconButton>
               <Menu
                 id="menu-appbar"
+                open={false}
                 anchorOrigin={{
                   vertical: 'bottom',
                   horizontal: 'left',
@@ -94,40 +94,52 @@ const Navbar = () => {
             >
               LOGO
             </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              <Button
-                key='balance_history'
-                href='/balance'
-                size='medium'
-                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'arial', fontSize: 14 }}
-              >
-                Balance and History
-              </Button>
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} className="navLinksContainer">
+              <Link to='/balance'>
+                <Button
+                  key='balance_history'
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
+                >
+                  Balance and History
+                </Button>
+              </Link>
 
-              <Button
-                key='transfer_funds'
-                href='/transferfunds'
-                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'arial', fontSize: 14 }}
-              >
-                Transfer funds
-              </Button>
+              <Link to='/transferfunds'>
+                <Button
+                  key='transfer_funds'
 
-              <Button
-                key='new_FD'
-                href='newfd'
-                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'arial', fontSize: 14 }}
-              >
-                New FD
-              </Button>
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
+                >
+                  Transfer funds
+                </Button>
+              </Link>
 
+              <Link to='/newfd'>
+                <Button
+                  key='new_FD'
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
+                >
+                  New FD
+                </Button>
+              </Link>
 
-              <Button
-                key='request_checkbook'
-                href='/requestcheckbook'
-                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'arial', fontSize: 14 }}
-              >
-                New checkbook
-              </Button>
+              <Link to='/requestcheckbook'>
+                <Button
+                  key='request_checkbook'
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
+                >
+                  New checkbook
+                </Button>
+              </Link>
+
+              <Link to='/changepin'>
+                <Button
+                  key='change_pin'
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
+                >
+                  CHANGEPIN
+                </Button>
+              </Link>
 
             </Box>
           </Toolbar>

@@ -11,10 +11,12 @@ import Navbar from './components/Navbar';
 import NewFD from './components/NewFD';
 import RequestChequebook from './components/RequestChequebook';
 import TransferFunds from './components/TransferFunds';
+import { useState, useEffect } from 'react';
+
 
 import PrivateRoute from './components/PrivateRoute';
 
-import { AuthProvider } from './AuthContext';
+import useAppState, { AppStateProvider } from './AppStateContext';
 import { ToastContainer } from 'react-toastify';
 import {
   BrowserRouter as Router,
@@ -22,9 +24,31 @@ import {
   Route
 } from "react-router-dom";
 
+import { getAllUsers } from './service/api';
+
+
+
 function App() {
+  /*   const [auth, setAuth] = useState(null);
+  
+    useEffect(() => {
+      let user = localStorage.getItem("user");
+      user && JSON.parse(user) ? setAuth(true) : setAuth(false);
+    }, []);
+  
+    */
+
+  const { setAllUsers } = useAppState();
+
+  useEffect(() => {
+    (async () => {
+      const resposne = await getAllUsers();
+      setAllUsers(resposne);
+    })();
+  }, []);
+
   return (
-    <AuthProvider>
+    <>
       <ToastContainer />
       <Router>
         <Navbar />
@@ -52,9 +76,14 @@ function App() {
               <BalanceAndHistory />
             </PrivateRoute>
           } />
+          <Route exact path="/newcheckbook" element={
+            <PrivateRoute>
+              <RequestChequebook />
+            </PrivateRoute>
+          } />
         </Routes>
       </Router>
-    </AuthProvider>
+    </>
   );
 }
 
