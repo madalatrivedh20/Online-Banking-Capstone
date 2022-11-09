@@ -124,7 +124,7 @@ const Navbar = () => {
                 </Button>
               </Link>
 
-              <Link to='/requestcheckbook'>
+              <Link to='/newcheckbook'>
                 <Button
                   key='request_checkbook'
                   sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}

@@ -21,6 +21,17 @@
       "balance": "30866",
       "cheque": {},
       "id": 2
+    },
+    {
+      "firstname": "TEST",
+      "acctype": "Current",
+      "accno": "1231231",
+      "email": "test2@test.com",
+      "password": "asd",
+      "secans": "ash",
+      "balance": "30000",
+      "cheque": {},
+      "id": 3
     }
   ],
   "transactions": [
@@ -85,6 +96,12 @@
       "accountNumber": "5555",
       "userId": 2,
       "id": 2
+    },
+    {
+      "pin": "9194",
+      "accountNumber": "1231231",
+      "userId": 3,
+      "id": 3
     }
   ],
   "fixedDeposits": []
