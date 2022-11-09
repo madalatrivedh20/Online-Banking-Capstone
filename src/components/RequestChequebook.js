@@ -55,7 +55,7 @@ const RequestChequebook = () => {
       issue_date: ""
     });
 
-    navigate('/');
+    navigate('/balance');
 
 
 

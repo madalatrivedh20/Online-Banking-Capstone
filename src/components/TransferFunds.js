@@ -28,11 +28,12 @@ const TransferFunds = () => {
     beneficiaryIFSC: "IFSC",
     accountType: "",
     amount: "",
-    remarks: "",
-    checkbox: false
+    remarks: ""
   });
 
   const [loading, setLoading] = useState(false);
+
+  const [checkbox, setCheckbox] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -44,7 +45,7 @@ const TransferFunds = () => {
   const onChangeHandler = (e) => setData({ ...data, [e.target.name]: e.target.value });
 
   const onBeneficiaryChange = (e) => {
-    const user = allUsers.find(user => user.id === e.target.value);
+    const user = allUsers.find(user => user.id === Number(e.target.value));
     setData({ ...data, beneficiary: user.id, beneficiaryAccNo: user.accno, beneficiaryIFSC: "IFSC", beneficiaryAccType: user.acctype });
   };
 
@@ -56,7 +57,7 @@ const TransferFunds = () => {
     if (!validator.isAlphanumeric(data.beneficiaryIFSC)) return toast.error("Invalid Beneficiary IFSC Code");
     if (!validator.isNumeric(data.amount)) return toast.error("Invalid Amount");
     if (!data.remarks) return toast.error("Invalid Remarks");
-    if (!data.checkbox) return toast.error("Please agree to terms and conditions");
+    if (!checkbox) return toast.error("Please agree to terms and conditions");
 
     toastId.current = toast.loading("Transacting...");
     setLoading(true);
@@ -80,8 +81,6 @@ const TransferFunds = () => {
     }
 
   };
-
-  console.log(data.beneficiary);
 
   return (
     <div className="forms">
@@ -150,6 +149,16 @@ const TransferFunds = () => {
               value={data.remarks}
               name="remarks"
               onChange={onChangeHandler}
+              placeholder="Enter Remarks" />
+          </div>
+
+          <div className="row">
+            <label>Please agree to the terms and conditions</label>
+            <input required
+              value={checkbox}
+              name="checkbox"
+              type={"checkbox"}
+              onChange={e => setCheckbox(e.target.checked)}
               placeholder="Enter Remarks" />
           </div>
 

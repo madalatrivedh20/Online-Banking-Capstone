@@ -39,7 +39,7 @@ const Footer = () => {
                 </Container>
             </Paper>
         </div>
-    )
-}
+    );
+};
 
 export default Footer;

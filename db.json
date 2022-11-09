@@ -1,14 +1,21 @@
 {
   "users": [
     {
-      "firstname": "ash",
       "acctype": "Current",
       "accno": "1231",
-      "email": "ash@ash.com",
-      "password": "ashish",
-      "secans": "blr",
-      "balance": "27980",
-      "cheque": {},
+      "transactions": [],
+      "balance": "30000$",
+      "cheque": {
+        "accno": "1",
+        "state": "dfg",
+        "city": "dfgh",
+        "zipcode": "5464",
+        "address": "ghfj",
+        "priority": "Medium",
+        "chequebook_id": "cddc31eb",
+        "requested_date": "9/11/2022",
+        "issued_date": "12/11/2022"
+      },
       "id": 1
     },
     {
@@ -29,7 +36,7 @@
       "email": "test2@test.com",
       "password": "asd",
       "secans": "ash",
-      "balance": "30000",
+      "balance": "30033",
       "cheque": {},
       "id": 3
     }
@@ -82,11 +89,38 @@
       "amount": "777",
       "transactionDate": "09/112022",
       "id": 6
+    },
+    {
+      "userId": 1,
+      "accountNumber": "1231",
+      "accountType": "Current",
+      "transactionType": "Debit",
+      "amount": "33",
+      "transactionDate": "09/112022",
+      "id": 7
+    },
+    {
+      "userId": 3,
+      "accountNumber": "1231231",
+      "accountType": "Current",
+      "transactionType": "Credit",
+      "amount": "33",
+      "transactionDate": "09/112022",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "accountNumber": "1231",
+      "accountType": "Current",
+      "transactionType": "Fixed Deposit",
+      "amount": "232",
+      "transactionDate": "09/112022",
+      "id": 9
     }
   ],
   "ATMPINs": [
     {
-      "pin": "4055",
+      "pin": "2222",
       "accountNumber": "1231",
       "userId": 1,
       "id": 1

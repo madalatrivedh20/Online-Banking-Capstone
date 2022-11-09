@@ -173,8 +173,8 @@ const NewFD = () => {
             <label>FD Type</label>
             <select value={data.FDProduct}
               onChange={onChangeHandler}
-              name="beneficiary">
-              <option value={0}>Select FD Type</option>
+              name="FDProduct">
+              <option value={""}>Select FD Type</option>
               <option value={"Standard"}>Standard</option>
               <option value={"Corporate"}>Corporate</option>
               <option value={"Cumulative"}>Cumulative</option>
@@ -185,9 +185,9 @@ const NewFD = () => {
           <div className="row">
             <label>FD Period</label>
             <select value={data.FDPeriod}
-              onChange={onChangeHandler}
-              name="beneficiary">
-              <option value={0}>Select FD Period</option>
+              onChange={e => { console.log(e.target); onChangeHandler(e); }}
+              name="FDPeriod">
+              <option value={""}>Select FD Period</option>
               <option value={"3 Months"}>3 Months</option>
               <option value={"6 Months"}>6 Months</option>
               <option value={"9 Months"}>9 Months</option>
@@ -207,11 +207,10 @@ const NewFD = () => {
           <div className="row">
             <label>Please agree to the terms and conditions</label>
             <input required
-              value={data.remarks}
-              name="remarks"
+              value={checkbox}
+              name="checkbox"
               type={"checkbox"}
-              onChange={onChangeHandler}
-              placeholder="Enter Remarks" />
+              onChange={e => setCheckbox(e.target.checked)} />
           </div>
 
           <div id="button" className="row">
@@ -220,8 +219,8 @@ const NewFD = () => {
           </div>
         </form>
 
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 

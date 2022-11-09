@@ -53,7 +53,7 @@ function App() {
       <ToastContainer />
       <Router>
         <Navbar />
-        <div style={{ marginTop: '70px' }}>
+        <div style={{ marginTop: '70px', marginBottom: '50px' }}>
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
