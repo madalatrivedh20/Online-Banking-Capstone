@@ -2,6 +2,12 @@
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 
+// import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+
+import { CacheProvider } from '@emotion/react';
+import createCache from '@emotion/cache';
+
 import Login from './components/Login';
 import Registration from './components/Registration';
 import Home from './components/Home';
@@ -27,6 +33,12 @@ import {
 
 import { getAllUsers } from './service/api';
 
+export const myTheme = createTheme();
+
+export const muiCache = createCache({
+  key: 'mui',
+  prepend: true,
+});
 
 
 function App() {
@@ -49,45 +61,47 @@ function App() {
   }, []);
 
   return (
-    <>
-      <ToastContainer />
-      <Router>
-        <Navbar />
-        <div style={{ marginTop: '70px', marginBottom: '50px' }}>
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/register" element={<Registration />} />
-            <Route exact path="/changepin" element={
-              <PrivateRoute>
-                <ChangePin />
-              </PrivateRoute>
-            } />
-            <Route exact path="/newfd" element={
-              <PrivateRoute>
-                <NewFD />
-              </PrivateRoute>
-            } />
-            <Route exact path="/transferfunds" element={
-              <PrivateRoute>
-                <TransferFunds />
-              </PrivateRoute>
-            } />
-            <Route exact path="/balance" element={
-              <PrivateRoute>
-                <BalanceAndHistory />
-              </PrivateRoute>
-            } />
-            <Route exact path="/newcheckbook" element={
-              <PrivateRoute>
-                <RequestChequebook />
-              </PrivateRoute>
-            } />
-          </Routes>
-        </div>
-        <Footer />
-      </Router>
-    </>
+    <CacheProvider value={muiCache}>
+      <ThemeProvider theme={myTheme}>
+        <ToastContainer />
+        <Router>
+          <Navbar />
+          <div style={{ marginTop: '70px', marginBottom: '50px' }}>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/login" element={<Login />} />
+              <Route exact path="/register" element={<Registration />} />
+              <Route exact path="/changepin" element={
+                <PrivateRoute>
+                  <ChangePin />
+                </PrivateRoute>
+              } />
+              <Route exact path="/newfd" element={
+                <PrivateRoute>
+                  <NewFD />
+                </PrivateRoute>
+              } />
+              <Route exact path="/transferfunds" element={
+                <PrivateRoute>
+                  <TransferFunds />
+                </PrivateRoute>
+              } />
+              <Route exact path="/balance" element={
+                <PrivateRoute>
+                  <BalanceAndHistory />
+                </PrivateRoute>
+              } />
+              <Route exact path="/newcheckbook" element={
+                <PrivateRoute>
+                  <RequestChequebook />
+                </PrivateRoute>
+              } />
+            </Routes>
+          </div>
+          <Footer />
+        </Router>
+      </ThemeProvider>
+    </CacheProvider>
   );
 }
 

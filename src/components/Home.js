@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { makeStyles } from '@mui/styles';
+import { AppBar, IconButton, Toolbar, Collapse } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
+
+import { myTheme } from '../App';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,28 +38,31 @@ const useStyles = makeStyles((theme) => ({
   title: {
     color: '#5AFF3D',
     fontSize: '4.5rem',
-    
+
   },
   goDown: {
     color: '#5AFF3D',
     fontSize: '4rem',
   },
 }));
+
 export default function Header() {
-  const classes = useStyles();
+  const classes = useStyles(myTheme);
   const [checked, setChecked] = useState(false);
+
   useEffect(() => {
     setChecked(true);
   }, []);
-  return (
+
+  return classes && (
     <div className={classes.root} id="header">
-      <AppBar className={classes.appbar} elevation={0}>
+      {/* <AppBar className={classes.appbar} elevation={0}>
         <Toolbar className={classes.appbarWrapper}>
           <h1 className={classes.appbarTitle}>
-            XYZ<span className={classes.colorText}>Bank.</span>
+            Vertex {" "}<span className={classes.colorText}>Bank</span>
           </h1>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
 
       <Collapse
         in={checked}
