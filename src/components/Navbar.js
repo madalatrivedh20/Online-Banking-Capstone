@@ -17,7 +17,6 @@ import { Link } from '@mui/material';
 
 function Navbar() {
   const auth = useAppContext();
-  console.log(auth);
   const navigate = useNavigate();
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -177,6 +176,26 @@ function Navbar() {
               </Button>
             </Link>
 
+            {
+              (auth.isAuthenticated || auth.issocialAuthenticated) ?
+                (<Button
+                  key='logout'
+                  onClick={e => { auth.setIsAuthenticated(false); auth.setIssocialAuthenticated(false); navigate('/'); }}
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
+                >
+                  Logout
+                </Button>)
+                :
+                (<Link to='/login'>
+                  <Button
+                    key='change_pin'
+                    onClick={e => navigate('/login')}
+                    sx={{ my: 2, color: 'white', display: 'block', fontSize: 14 }}
+                  >
+                    Login
+                  </Button>
+                </Link>)
+            }
           </Box >
         </Toolbar >
       </Container >

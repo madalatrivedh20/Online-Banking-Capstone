@@ -18,8 +18,7 @@ const Home = () => {
                 {element.text}
               </Link>)}
         </div>
-        {/* <div id="menu-background-pattern"></div> */}
-        {/* <div id="menu-background-image"></div> */}
+      
       </div>
     </div>
   );

@@ -35,13 +35,13 @@ export const changeATMPIN = async (userId, oldPin, newPin) => {
     return { type: "error", render: "Incorrect old PIN!" };
   }
 
-  const response = await fetch(`http://localhost:3000/ATMPINs/${currentPin.id}`,
+  const response = await fetch(`http://localhost:3000/ATMPINs/${currentPin[0].id}`,
     {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ ...currentPin, pin: newPin }),
+      body: JSON.stringify({ ...currentPin[0], pin: newPin }),
     });
 
   return { type: "success", render: "PIN changed successfully!" };;

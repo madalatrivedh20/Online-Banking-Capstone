@@ -67,12 +67,18 @@ function Registration() {
     if (!validator.isNumeric(data['accno'][0])) return toast.error("Invalid Account Number");
     if (!validator.isEmail(data['email'][0])) return toast.error("Please enter a valid Email");
 
-    // CHECK IF ACC NO ALRDY EXISTS
-
     let email_str = data['email'][0];
     let password_str = data['password'][0];
     let repassword_str = data['repassword'][0];
     let checkemail = (validator.isEmail(email_str));
+
+    if (!validator.isStrongPassword(password_str, {
+      minLength: 8, minLowercase: 1,
+      minUppercase: 1, minNumbers: 1, minSymbols: 1
+    })) {
+      return toast.error("Please ensure that a password contains  : minlength : 8 characters, min 1 lowercase, min 1 upeercase, min 1 number  and min 1 symbol")
+    }
+
 
 
     if (checkemail) {
@@ -81,7 +87,7 @@ function Registration() {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            'firstname': data['firstname'][0] /* 'lastname': data['lastname'][0] */, 'acctype': data['acctype'][0],
+            'firstname': data['firstname'][0], 'acctype': data['acctype'][0],
             'accno': data['accno'][0], 'email': data['email'][0], 'password': data['password'][0], 'sectype': data['sectype'][0], 'secans': data['secans'][0],
             'balance': '30000', "cheque": {}
           })
@@ -105,7 +111,7 @@ function Registration() {
 
   return (
     <div>
-      <div id="loginform">
+      <div className="forms">
         <FormHeader title="Registration Form" />
 
 
@@ -114,13 +120,10 @@ function Registration() {
             <div class="column-1">
               <div className="row">
                 <label>First Name</label>
-                <input required type="text" name="firstname" placeholder="Enter your First Name" value={data.firstname} onChange={changeHandler} />
+                <input autofocus required type="text" name="firstname" placeholder="Enter your First Name" value={data.firstname} onChange={changeHandler} />
               </div>
 
-              {/* <div className="row">
-                <label>Last Name</label>
-                <input required type="text" name="lastname" placeholder="Enter your Last Name" value={data.lastname} onChange={changeHandler} />
-              </div> */}
+
 
               <div className="row">
                 <label>Account Type</label>
@@ -184,8 +187,7 @@ function Registration() {
   );
 }
 
-export default Registration
-  ;
+export default Registration;
 
 
 
