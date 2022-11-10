@@ -156,7 +156,7 @@ function Navbar() {
               </Button>
             </Link>
 
-            <Link to='/requestcheckbook'>
+            <Link to='/newcheckbook'>
               <Button
                 key='request_checkbook'
                 onClick={handleCloseNavMenu}

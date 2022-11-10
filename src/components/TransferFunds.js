@@ -74,9 +74,9 @@ const TransferFunds = () => {
   };
 
   return (
-    <div className="forms">
+    <div className="forms" >
       <FormHeader title="Transfer Funds" />
-      <div>
+      <div style={{"overflow":"scroll"}}>
         <form onSubmit={onSubmitHandler}>
           <div className="row">
             <label>From Account Number</label>

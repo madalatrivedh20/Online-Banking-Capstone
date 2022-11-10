@@ -11,6 +11,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 import useAppContext from '../AppStateContext';
+import GoogleButton from "react-google-button"
 
 
 const FormHeader = props => (
@@ -156,9 +157,8 @@ function Login() {
           <div id="button" className="row">
             <div style={{ "textAlign": "center", "marginLeft": "0px" }}>
               <ul>
-                {/*<li style={{ "display": "inline" }}> <a href="#" onClick={signInWithFaceBook} class="fa fa-facebook"></a></li>*/}
-                <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithGoogle} class="fa fa-google"></a></li>
-                <li style={{ "display": "inline" }}> <a href="#" onClick={signInWithGoogle} class="fa fa-twitter"></a></li>
+                <GoogleButton onClick={signInWithGoogle}/>
+          
 
               </ul>
             </div>
