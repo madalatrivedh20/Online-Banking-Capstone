@@ -112,7 +112,7 @@ const RequestChequebook = () => {
           <div className="row">
             <label>Priority</label>
 
-            <select name="priority" required value={data.priority} onChange={changeHandler}>
+            <select name="priority" required value={data.priority} onChange={changeHandler} placeholder="Select Priority">
               <option value={"Select your Priority"}>Select your Priority</option>
               <option value={"Urgent"}>Urgent (1-2 Days)</option>
               <option value={"High"}>High (3-5 Days)</option>

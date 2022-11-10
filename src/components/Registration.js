@@ -126,7 +126,7 @@ function Registration() {
               <div className="row">
                 <label>Account Type</label>
 
-                <select name="acctype" required value={data.acctype} onChange={changeHandler}>
+                <select name="acctype" placeholder='Select Account Type' required value={data.acctype} onChange={changeHandler}>
                   <option value={"None"}>None</option>
                   <option value={"Current"}>Current</option>
                   <option value={"Saving"}>Savings</option>
@@ -137,7 +137,7 @@ function Registration() {
               <div className="row">
                 <label>Security Question Type</label>
 
-                <select name="sectype" required value={data.sectype} onChange={changeHandler}>
+                <select name="sectype" required value={data.sectype} onChange={changeHandler} placeholder='Select Security Question'>
                   <option value={"In what city were you born?"}>In what city were you born</option>
                   <option value={"What is the name of your favorite pet?"}>What is the name of your favorite pet?</option>
                   <option value={"What high school did you attend?"}>What high school did you attend?</option>

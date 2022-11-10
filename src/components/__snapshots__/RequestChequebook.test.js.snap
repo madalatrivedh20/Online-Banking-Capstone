@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Test 1`] = `
+<div
+  className="forms"
+>
+  <div>
+    <h2
+      id="headerTitle"
+    >
+      Request a New Checkbook
+    </h2>
+  </div>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="row"
+      >
+        <label>
+          Account Number
+        </label>
+        <input
+          disbaled={true}
+          name="accno"
+          onChange={[Function]}
+          placeholder="Account Number"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div>
+        <h2
+          id="headerTitle"
+        >
+          Billing Address
+        </h2>
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          State
+        </label>
+        <input
+          name="state"
+          onChange={[Function]}
+          placeholder="Enter your State"
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          City
+        </label>
+        <input
+          name="city"
+          onChange={[Function]}
+          placeholder="Enter your City"
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          Zip code
+        </label>
+        <input
+          name="zipcode"
+          onChange={[Function]}
+          placeholder="Enter your Pincode"
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          Address
+        </label>
+        <input
+          name="address"
+          onChange={[Function]}
+          placeholder="Enter your Address"
+          required={true}
+          type="textarea"
+          value=""
+        />
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          Priority
+        </label>
+        <select
+          name="priority"
+          onChange={[Function]}
+          placeholder="Select Priority"
+          required={true}
+          value=""
+        >
+          <option
+            value="Select your Priority"
+          >
+            Select your Priority
+          </option>
+          <option
+            value="Urgent"
+          >
+            Urgent (1-2 Days)
+          </option>
+          <option
+            value="High"
+          >
+            High (3-5 Days)
+          </option>
+          <option
+            value="Medium"
+          >
+            Medium (5-7 Days)
+          </option>
+        </select>
+      </div>
+      <div
+        className="row"
+        id="button"
+      >
+        <button>
+          Raise a request
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;

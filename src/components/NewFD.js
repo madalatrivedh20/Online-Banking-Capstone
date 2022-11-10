@@ -67,7 +67,7 @@ const NewFD = () => {
         <form onSubmit={onSubmitHandler}>
           <div className="row">
             <label>From Account</label>
-            <input required type="text" placeholder="Enter your City" name="accNo"
+            <input required type="text" placeholder="Enter your account no" name="accNo"
               disabled
               onChange={onChangeHandler}
               value={data.accNo} />
@@ -76,6 +76,7 @@ const NewFD = () => {
           <div className="row">
             <label>FD Type</label>
             <select value={data.FDProduct}
+              placeholder="Select FD Type"
               onChange={onChangeHandler}
               name="FDProduct">
               <option value={""}>Select FD Type</option>
@@ -89,7 +90,8 @@ const NewFD = () => {
           <div className="row">
             <label>FD Period</label>
             <select value={data.FDPeriod}
-              onChange={e => { console.log(e.target); onChangeHandler(e); }}
+              placeholder="Select FD Period"
+              onChange={onChangeHandler}
               name="FDPeriod">
               <option value={""}>Select FD Period</option>
               <option value={"3 Months"}>3 Months</option>
@@ -105,6 +107,7 @@ const NewFD = () => {
               type="text"
               name="amount"
               onChange={onChangeHandler}
+              placeholder="Enter amounr"
               value={data.amount} />
           </div>
 
@@ -117,7 +120,7 @@ const NewFD = () => {
               type={"checkbox"}
               onChange={e => setCheckbox(e.target.checked)}
               placeholder="Enter Remarks" />
-            <label for="checkbox" style={{ paddingLeft: '5px', color: "black" }}>Please agree to the terms and conditions</label>
+            <label style={{ paddingLeft: '5px', color: "black" }}>Please agree to the terms and conditions</label>
           </div>
 
           <div id="button" className="row">
