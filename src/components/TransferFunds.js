@@ -102,6 +102,7 @@ const TransferFunds = () => {
             <label>Beneficiary</label>
             <select value={data.beneficiary}
               name="beneficiary"
+              placeholder='Select beneficiary'
               onChange={onBeneficiaryChange}>
               <option value={0}>Select your Beneficiary</option>
               {allUsers
@@ -116,20 +117,22 @@ const TransferFunds = () => {
               disabled type="text"
               value={data.beneficiaryAccNo}
               name="beneficiaryAccNo"
+              placeholder='Beneficiary Account Number'
               onChange={onChangeHandler} />
           </div>
 
           <div className="row">
             <label>Beneficiary IFSC Code</label>
-            <input required type="text" placeholder="Enter your City" disabled
+            <input required type="text" disabled
               value={data.beneficiaryIFSC}
               name="beneficiaryIFSC"
+              placeholder='Beneficiary IFSC Code'
               onChange={onChangeHandler} />
           </div>
 
           <div className="row">
             <label>Account Type</label>
-            <input required type="text" disabled placeholder="Enter your Pincode"
+            <input required type="text" disabled placeholder="Enter account type"
               value={data.accountType}
               name="accountType"
               onChange={onChangeHandler} />
@@ -159,8 +162,7 @@ const TransferFunds = () => {
               name="checkbox"
               id="checkbox"
               type={"checkbox"}
-              onChange={e => setCheckbox(e.target.checked)}
-              placeholder="Enter Remarks" />
+              onChange={e => setCheckbox(e.target.checked)} />
             <label for="checkbox" style={{ paddingLeft: '5px', color: "black" }}>Please agree to the terms and conditions</label>
           </div>
 

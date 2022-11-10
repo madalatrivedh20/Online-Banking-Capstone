@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Test 1`] = `
+<div>
+  <div
+    className="forms"
+  >
+    <div>
+      <div
+        className="imgcontainer"
+      >
+        <img
+          alt="Avatar"
+          className="avatar"
+          src="download.png"
+        />
+      </div>
+      <h2
+        id="headerTitle"
+      >
+        Registration Form
+      </h2>
+    </div>
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        class="columns"
+      >
+        <div
+          class="column-1"
+        >
+          <div
+            className="row"
+          >
+            <label>
+              First Name
+            </label>
+            <input
+              name="firstname"
+              onChange={[Function]}
+              placeholder="Enter your First Name"
+              required={true}
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <label>
+              Account Type
+            </label>
+            <select
+              name="acctype"
+              onChange={[Function]}
+              placeholder="Select Account Type"
+              required={true}
+              value=""
+            >
+              <option
+                value="None"
+              >
+                None
+              </option>
+              <option
+                value="Current"
+              >
+                Current
+              </option>
+              <option
+                value="Saving"
+              >
+                Savings
+              </option>
+            </select>
+          </div>
+          <div
+            className="row"
+          >
+            <label>
+              Security Question Type
+            </label>
+            <select
+              name="sectype"
+              onChange={[Function]}
+              placeholder="Select Security Question"
+              required={true}
+              value=""
+            >
+              <option
+                value="In what city were you born?"
+              >
+                In what city were you born
+              </option>
+              <option
+                value="What is the name of your favorite pet?"
+              >
+                What is the name of your favorite pet?
+              </option>
+              <option
+                value="What high school did you attend?"
+              >
+                What high school did you attend?
+              </option>
+            </select>
+          </div>
+          <div
+            className="row"
+          >
+            <label>
+              Security Question Answer
+            </label>
+            <input
+              name="secans"
+              onChange={[Function]}
+              placeholder="Enter your Security Question Answer"
+              required={true}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="column-1"
+        >
+          <div
+            className="row"
+          >
+            <label>
+              Account Number
+            </label>
+            <input
+              name="accno"
+              onChange={[Function]}
+              placeholder="Enter your Account Number"
+              required={true}
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <label>
+              Email
+            </label>
+            <input
+              name="email"
+              onChange={[Function]}
+              placeholder="Enter your Email"
+              required={true}
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <label>
+              Password
+            </label>
+            <input
+              name="password"
+              onChange={[Function]}
+              placeholder="Enter your Password"
+              required={true}
+              type="password"
+              value=""
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <label>
+              Re-enter your Password
+            </label>
+            <input
+              name="repassword"
+              onChange={[Function]}
+              placeholder="Re-Enter your Password"
+              required={true}
+              type="password"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+        id="button"
+      >
+        <button>
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
