@@ -1,141 +1,183 @@
 {
   "users": [
     {
+      "firstname": "Trivedh",
       "acctype": "Current",
-      "accno": "1231",
-      "transactions": [],
-      "balance": "30000$",
-      "cheque": {
-        "accno": "1",
-        "state": "dfg",
-        "city": "dfgh",
-        "zipcode": "5464",
-        "address": "ghfj",
-        "priority": "Medium",
-        "chequebook_id": "cddc31eb",
-        "requested_date": "9/11/2022",
-        "issued_date": "12/11/2022"
-      },
+      "accno": "6474930",
+      "email": "madalatrivedh@gmail.com",
+      "password": "Triv@123",
+      "secans": "Hyderabad",
+      "balance": "29500",
+      "cheque": {},
       "id": 1
     },
     {
-      "firstname": "test",
+      "firstname": "vignesh",
       "acctype": "Current",
-      "accno": "5555",
-      "email": "test@test.com",
-      "password": "ashish",
-      "secans": "blr",
-      "balance": "30866",
+      "accno": "565867",
+      "email": "vignesh@gmail.com",
+      "password": "Hello@123",
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "Hyderabad",
+      "balance": "30200",
       "cheque": {},
       "id": 2
     },
     {
-      "firstname": "TEST",
+      "firstname": "Ashish",
       "acctype": "Current",
-      "accno": "1231231",
-      "email": "test2@test.com",
-      "password": "asd",
-      "secans": "ash",
-      "balance": "30033",
+      "accno": "456789",
+      "email": "ashish@gmail.com",
+      "password": "Hello@123",
+      "sectype": "What is the name of your favorite pet?",
+      "secans": "golden",
+      "balance": "29700",
       "cheque": {},
       "id": 3
+    },
+    {
+      "acctype": "Saving",
+      "accno": "5658",
+      "transactions": [],
+      "balance": "30000$",
+      "cheque": {
+        "accno": "5",
+        "state": "Telangana",
+        "city": "Hyderabad",
+        "zipcode": "500046",
+        "address": "A-202, Aparna Sarovar Grande, Nallagandla, Hyderabad , Telangana, India",
+        "priority": "Urgent",
+        "chequebook_id": "ee7a49ba",
+        "requested_date": "10/11/2022",
+        "issued_date": "13/11/2022"
+      },
+      "id": 4
+    },
+    {
+      "firstname": "shivangi",
+      "acctype": "Current",
+      "accno": "56478",
+      "email": "shivangi@gmail.com",
+      "password": "Hello@123",
+      "secans": "hyd",
+      "balance": "30000",
+      "cheque": {},
+      "id": 5
     }
   ],
   "transactions": [
     {
       "userId": 1,
-      "accountNumber": "1231",
+      "accountNumber": "6474930",
       "accountType": "Current",
       "transactionType": "Debit",
-      "amount": "333",
-      "transactionDate": "09/112022",
+      "amount": "100",
+      "transactionDate": "10/112022",
       "id": 1
     },
     {
       "userId": 2,
-      "accountNumber": "5555",
+      "accountNumber": "565867",
       "accountType": "Current",
       "transactionType": "Credit",
-      "amount": "333",
-      "transactionDate": "09/112022",
+      "amount": "100",
+      "transactionDate": "10/112022",
       "id": 2
     },
     {
+      "userId": 1,
+      "accountNumber": "6474930",
+      "accountType": "Current",
       "transactionType": "Fixed Deposit",
-      "amount": "333",
-      "transactionDate": "09/112022",
+      "amount": "500",
+      "transactionDate": "10/112022",
       "id": 3
     },
     {
+      "userId": 3,
+      "accountNumber": "456789",
+      "accountType": "Current",
       "transactionType": "Fixed Deposit",
-      "amount": "11",
-      "transactionDate": "09/112022",
+      "amount": "200",
+      "transactionDate": "10/112022",
       "id": 4
     },
     {
-      "userId": 1,
-      "accountNumber": "1231",
+      "userId": 3,
+      "accountNumber": "456789",
       "accountType": "Current",
-      "transactionType": "Fixed Deposit",
-      "amount": "33",
-      "transactionDate": "09/112022",
+      "transactionType": "Debit",
+      "amount": "100",
+      "transactionDate": "10/112022",
       "id": 5
     },
     {
       "userId": 1,
-      "accountNumber": "1231",
+      "accountNumber": "6474930",
       "accountType": "Current",
-      "transactionType": "Fixed Deposit",
-      "amount": "777",
-      "transactionDate": "09/112022",
+      "transactionType": "Credit",
+      "amount": "100",
+      "transactionDate": "10/112022",
       "id": 6
     },
     {
-      "userId": 1,
-      "accountNumber": "1231",
-      "accountType": "Current",
+      "userId": 4,
+      "accountNumber": "5658",
+      "accountType": "Saving",
       "transactionType": "Debit",
-      "amount": "33",
-      "transactionDate": "09/112022",
+      "amount": "100",
+      "transactionDate": "10/112022",
       "id": 7
     },
     {
-      "userId": 3,
-      "accountNumber": "1231231",
+      "userId": 1,
+      "accountNumber": "6474930",
       "accountType": "Current",
       "transactionType": "Credit",
-      "amount": "33",
-      "transactionDate": "09/112022",
+      "amount": "100",
+      "transactionDate": "10/112022",
       "id": 8
     },
     {
-      "userId": 1,
-      "accountNumber": "1231",
-      "accountType": "Current",
+      "userId": 4,
+      "accountNumber": "5658",
+      "accountType": "Saving",
       "transactionType": "Fixed Deposit",
-      "amount": "232",
-      "transactionDate": "09/112022",
+      "amount": "100",
+      "transactionDate": "10/112022",
       "id": 9
     }
   ],
   "ATMPINs": [
     {
-      "pin": "2222",
-      "accountNumber": "1231",
+      "pin": "6991",
+      "accountNumber": "6474930",
       "userId": 1,
       "id": 1
     },
     {
-      "pin": "4815",
-      "accountNumber": "5555",
+      "pin": "6378",
+      "accountNumber": "565867",
       "userId": 2,
       "id": 2
     },
     {
-      "pin": "9194",
-      "accountNumber": "1231231",
+      "pin": "6770",
+      "accountNumber": "456789",
       "userId": 3,
       "id": 3
+    },
+    {
+      "pin": "7130",
+      "accountNumber": "5658",
+      "userId": 4,
+      "id": 4
+    },
+    {
+      "pin": "5883",
+      "accountNumber": "56478",
+      "userId": 5,
+      "id": 5
     }
   ],
   "fixedDeposits": []
