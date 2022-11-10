@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Test 1`] = `
+<div
+  className="forms"
+>
+  <div>
+    <h2
+      id="headerTitle"
+    >
+      Transfer Funds
+    </h2>
+  </div>
+  <div
+    style={
+      Object {
+        "overflow": "scroll",
+      }
+    }
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="row"
+      >
+        <label>
+          From Account Number
+        </label>
+        <input
+          disbaled={true}
+          name="fromAccNo"
+          onChange={[Function]}
+          placeholder="From Account Number"
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          Beneficiary
+        </label>
+        <select
+          name="beneficiary"
+          onChange={[Function]}
+          placeholder="Select beneficiary"
+          value=""
+        >
+          <option
+            value={0}
+          >
+            Select your Beneficiary
+          </option>
+        </select>
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          Beneficiary Account Number
+        </label>
+        <input
+          disabled={true}
+          name="beneficiaryAccNo"
+          onChange={[Function]}
+          placeholder="Beneficiary Account Number"
+          required={true}
+          type="text"
+          value="Please Select Beneficiary"
+        />
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          Beneficiary IFSC Code
+        </label>
+        <input
+          disabled={true}
+          name="beneficiaryIFSC"
+          onChange={[Function]}
+          placeholder="Beneficiary IFSC Code"
+          required={true}
+          type="text"
+          value="IFSC"
+        />
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          Account Type
+        </label>
+        <input
+          disabled={true}
+          name="accountType"
+          onChange={[Function]}
+          placeholder="Enter account type"
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          Amount
+        </label>
+        <input
+          name="amount"
+          onChange={[Function]}
+          placeholder="Enter Amount"
+          required={true}
+          type="textarea"
+          value=""
+        />
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          Amount
+        </label>
+        <input
+          name="remarks"
+          onChange={[Function]}
+          placeholder="Enter Remarks"
+          required={true}
+          type="textarea"
+          value=""
+        />
+      </div>
+      <div
+        className="row"
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <input
+          id="checkbox"
+          name="checkbox"
+          onChange={[Function]}
+          required={true}
+          style={
+            Object {
+              "display": "inline",
+              "marginLeft": "50px",
+              "width": "min-content",
+            }
+          }
+          type="checkbox"
+          value={false}
+        />
+        <label
+          for="checkbox"
+          style={
+            Object {
+              "color": "black",
+              "paddingLeft": "5px",
+            }
+          }
+        >
+          Please agree to the terms and conditions
+        </label>
+      </div>
+      <div
+        className="row"
+        id="button"
+      >
+        <button>
+          Transfer Funds
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;

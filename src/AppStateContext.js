@@ -4,6 +4,7 @@ const AppStateContext = createContext();
 
 export const AppStateProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [issocialAuthenticated, setIssocialAuthenticated] = useState(false);
   const [user, setUser] = useState({});
   const [allUsers, setAllUsers] = useState([]);
 
@@ -11,6 +12,8 @@ export const AppStateProvider = ({ children }) => {
     isAuthenticated,
     setIsAuthenticated,
     user,
+    issocialAuthenticated,
+    setIssocialAuthenticated,
     setUser,
     allUsers,
     setAllUsers

@@ -6,6 +6,9 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 
+
+// Component that handles raising a request for the new cheque book
+
 const RequestChequebook = () => {
   const navigate = useNavigate();
   const FormHeader = props => (
@@ -14,6 +17,9 @@ const RequestChequebook = () => {
     </div>
   );
   const { isAuthenticated, user } = useAppState();
+
+// Function invoked on submission of the form with the details like address
+
   const submitHandler = (e) => {
     e.preventDefault();
     if (!validator.isAlpha(data['state'][0])) return toast.error("Invalid State");
@@ -55,7 +61,7 @@ const RequestChequebook = () => {
       issue_date: ""
     });
 
-    navigate('/');
+    navigate('/balance');
 
 
 
@@ -75,7 +81,7 @@ const RequestChequebook = () => {
 
 
   return (
-    <div id="loginform">
+    <div className="forms">
       <FormHeader title="Request a New Checkbook" />
       <div>
         <form onSubmit={submitHandler}>
@@ -106,7 +112,7 @@ const RequestChequebook = () => {
           <div className="row">
             <label>Priority</label>
 
-            <select name="priority" required value={data.priority} onChange={changeHandler}>
+            <select name="priority" required value={data.priority} onChange={changeHandler} placeholder="Select Priority">
               <option value={"Select your Priority"}>Select your Priority</option>
               <option value={"Urgent"}>Urgent (1-2 Days)</option>
               <option value={"High"}>High (3-5 Days)</option>

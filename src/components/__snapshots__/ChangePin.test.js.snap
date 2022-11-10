@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Test 1`] = `
+<div
+  className="forms"
+>
+  <div>
+    <h2
+      id="headerTitle"
+    >
+      Change PIN
+    </h2>
+  </div>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="row"
+      >
+        <label>
+          Old PIN
+        </label>
+        <input
+          name="oldPin"
+          onChange={[Function]}
+          placeholder="Enter old PIN"
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          New PIN
+        </label>
+        <input
+          name="newPin"
+          onChange={[Function]}
+          placeholder="Enter new PIN"
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          Re-enter new PIN
+        </label>
+        <input
+          name="confirmNewPin"
+          onChange={[Function]}
+          placeholder="Re-enter new PIN"
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="row"
+        id="button"
+      >
+        <button>
+          Change ATM PIN
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;

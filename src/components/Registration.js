@@ -31,9 +31,7 @@ function Registration() {
     secans: "",
     balance: "30000"
   });
-  const checkemail = '';
-
-  const { username, password } = data;
+  
   let [users, setusers] = useState({});
 
 
@@ -67,12 +65,18 @@ function Registration() {
     if (!validator.isNumeric(data['accno'][0])) return toast.error("Invalid Account Number");
     if (!validator.isEmail(data['email'][0])) return toast.error("Please enter a valid Email");
 
-    // CHECK IF ACC NO ALRDY EXISTS
-
     let email_str = data['email'][0];
     let password_str = data['password'][0];
     let repassword_str = data['repassword'][0];
     let checkemail = (validator.isEmail(email_str));
+
+    if (!validator.isStrongPassword(password_str, {
+      minLength: 8, minLowercase: 1,
+      minUppercase: 1, minNumbers: 1, minSymbols: 1
+    })) {
+      return toast.error("Please ensure that a password contains  : minlength : 8 characters, min 1 lowercase, min 1 upeercase, min 1 number  and min 1 symbol")
+    }
+
 
 
     if (checkemail) {
@@ -81,7 +85,7 @@ function Registration() {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            'firstname': data['firstname'][0] /* 'lastname': data['lastname'][0] */, 'acctype': data['acctype'][0],
+            'firstname': data['firstname'][0], 'acctype': data['acctype'][0],
             'accno': data['accno'][0], 'email': data['email'][0], 'password': data['password'][0], 'sectype': data['sectype'][0], 'secans': data['secans'][0],
             'balance': '30000', "cheque": {}
           })
@@ -105,7 +109,7 @@ function Registration() {
 
   return (
     <div>
-      <div id="loginform">
+      <div className="forms">
         <FormHeader title="Registration Form" />
 
 
@@ -114,18 +118,15 @@ function Registration() {
             <div class="column-1">
               <div className="row">
                 <label>First Name</label>
-                <input required type="text" name="firstname" placeholder="Enter your First Name" value={data.firstname} onChange={changeHandler} />
+                <input autofocus required type="text" name="firstname" placeholder="Enter your First Name" value={data.firstname} onChange={changeHandler} />
               </div>
 
-              {/* <div className="row">
-                <label>Last Name</label>
-                <input required type="text" name="lastname" placeholder="Enter your Last Name" value={data.lastname} onChange={changeHandler} />
-              </div> */}
+
 
               <div className="row">
                 <label>Account Type</label>
 
-                <select name="acctype" required value={data.acctype} onChange={changeHandler}>
+                <select name="acctype" placeholder='Select Account Type' required value={data.acctype} onChange={changeHandler}>
                   <option value={"None"}>None</option>
                   <option value={"Current"}>Current</option>
                   <option value={"Saving"}>Savings</option>
@@ -136,7 +137,7 @@ function Registration() {
               <div className="row">
                 <label>Security Question Type</label>
 
-                <select name="sectype" required value={data.sectype} onChange={changeHandler}>
+                <select name="sectype" required value={data.sectype} onChange={changeHandler} placeholder='Select Security Question'>
                   <option value={"In what city were you born?"}>In what city were you born</option>
                   <option value={"What is the name of your favorite pet?"}>What is the name of your favorite pet?</option>
                   <option value={"What high school did you attend?"}>What high school did you attend?</option>
@@ -184,8 +185,7 @@ function Registration() {
   );
 }
 
-export default Registration
-  ;
+export default Registration;
 
 
 

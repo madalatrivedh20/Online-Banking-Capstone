@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Test 1`] = `
+<div
+  className="forms"
+>
+  <div>
+    <h2
+      id="headerTitle"
+    >
+      Fixed Deposit
+    </h2>
+  </div>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="row"
+      >
+        <label>
+          From Account
+        </label>
+        <input
+          disabled={true}
+          name="accNo"
+          onChange={[Function]}
+          placeholder="Enter your account no"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          FD Type
+        </label>
+        <select
+          name="FDProduct"
+          onChange={[Function]}
+          placeholder="Select FD Type"
+          value=""
+        >
+          <option
+            value=""
+          >
+            Select FD Type
+          </option>
+          <option
+            value="Standard"
+          >
+            Standard
+          </option>
+          <option
+            value="Corporate"
+          >
+            Corporate
+          </option>
+          <option
+            value="Cumulative"
+          >
+            Cumulative
+          </option>
+          <option
+            value="Tax-Saving"
+          >
+            Tax-Saving
+          </option>
+        </select>
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          FD Period
+        </label>
+        <select
+          name="FDPeriod"
+          onChange={[Function]}
+          placeholder="Select FD Period"
+          value=""
+        >
+          <option
+            value=""
+          >
+            Select FD Period
+          </option>
+          <option
+            value="3 Months"
+          >
+            3 Months
+          </option>
+          <option
+            value="6 Months"
+          >
+            6 Months
+          </option>
+          <option
+            value="9 Months"
+          >
+            9 Months
+          </option>
+          <option
+            value="12 Months"
+          >
+            12 Months
+          </option>
+        </select>
+      </div>
+      <div
+        className="row"
+      >
+        <label>
+          Amount
+        </label>
+        <input
+          name="amount"
+          onChange={[Function]}
+          placeholder="Enter amounr"
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="row"
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <input
+          id="checkbox"
+          name="checkbox"
+          onChange={[Function]}
+          placeholder="Enter Remarks"
+          required={true}
+          style={
+            Object {
+              "display": "inline",
+              "marginLeft": "50px",
+              "width": "min-content",
+            }
+          }
+          type="checkbox"
+          value={false}
+        />
+        <label
+          style={
+            Object {
+              "color": "black",
+              "paddingLeft": "5px",
+            }
+          }
+        >
+          Please agree to the terms and conditions
+        </label>
+      </div>
+      <div
+        className="row"
+        id="button"
+      >
+        <button>
+          Create Fixed Deposit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;

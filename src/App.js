@@ -1,7 +1,6 @@
 
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
-
 import Login from './components/Login';
 import Registration from './components/Registration';
 import Home from './components/Home';
@@ -11,8 +10,10 @@ import Navbar from './components/Navbar';
 import NewFD from './components/NewFD';
 import RequestChequebook from './components/RequestChequebook';
 import TransferFunds from './components/TransferFunds';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
 import { useState, useEffect } from 'react';
+import Events from './components/Events';
+import SocialRoute from './components/SocialRoute';
 
 
 import PrivateRoute from './components/PrivateRoute';
@@ -53,36 +54,42 @@ function App() {
       <ToastContainer />
       <Router>
         <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<Registration />} />
-          <Route exact path="/changepin" element={
-            <PrivateRoute>
-              <ChangePin />
-            </PrivateRoute>
-          } />
-          <Route exact path="/newfd" element={
-            <PrivateRoute>
-              <NewFD />
-            </PrivateRoute>
-          } />
-          <Route exact path="/transferfunds" element={
-            <PrivateRoute>
-              <TransferFunds />
-            </PrivateRoute>
-          } />
-          <Route exact path="/balance" element={
-            <PrivateRoute>
-              <BalanceAndHistory />
-            </PrivateRoute>
-          } />
-          <Route exact path="/newcheckbook" element={
-            <PrivateRoute>
-              <RequestChequebook />
-            </PrivateRoute>
-          } />
-        </Routes>
+        <div style={{ marginTop: '70px', marginBottom: '50px' }}>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Registration />} />
+            <Route exact path="/changepin" element={
+              <PrivateRoute>
+                <ChangePin />
+              </PrivateRoute>
+            } />
+            <Route exact path="/newfd" element={
+              <PrivateRoute>
+                <NewFD />
+              </PrivateRoute>
+            } />
+            <Route exact path="/transferfunds" element={
+              <PrivateRoute>
+                <TransferFunds />
+              </PrivateRoute>
+            } />
+            <Route exact path="/balance" element={
+              <PrivateRoute>
+                <BalanceAndHistory />
+              </PrivateRoute>
+            } />
+            <Route exact path="/newcheckbook" element={
+              <PrivateRoute>
+                <RequestChequebook />
+              </PrivateRoute>} />
+            <Route exact path="/events" element={
+              <SocialRoute>
+                <Events />
+              </SocialRoute>
+            } />
+          </Routes>
+        </div>
         <Footer />
       </Router>
     </>

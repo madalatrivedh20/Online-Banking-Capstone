@@ -1,3 +1,4 @@
+//Utility to create a new Transaction object and return it
 export const createTransactionObject = (userId, accountNumber, accountType, transactionType, amount) => {
   const today = new Date();
   const dd = String(today.getDate()).padStart(2, '0');
@@ -7,6 +8,7 @@ export const createTransactionObject = (userId, accountNumber, accountType, tran
   return { userId, accountNumber, accountType, transactionType, amount, transactionDate: `${dd}/${mm}${yyyy}` };
 };
 
+//Utility to generate a random pin
 export const genRandomPin = () => {
   const msgSpace = '0123456789';
   let randomPin = "";

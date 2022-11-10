@@ -1,45 +1,24 @@
-import { Container, Box } from "@mui/system";
-import { Typography, Paper } from "@mui/material";
-import Image from "mui-image";
+
+//Footer component that appears at the end of the page
+
+import React from "react";
+import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 const Footer = () => {
     return (
-        <div>
-            <Paper sx={{
-                // marginTop: 'calc(10% + 60px)',
-                width: '100%',
-                position: 'fixed',
-                bottom: 0,
-                width: '100%'
-            }} component="footer" square variant="outlined">
-                <Container maxWidth="lg">
-                    <Box
-                        sx={{
-                            flexGrow: 1,
-                            justifyContent: "left",
-                            display: "flex",
-                            m: 1
-                        }}
-                    >
-                        VERTEX BANK GROUP
-                    </Box>
-
-                    <Box
-                        sx={{
-                            flexGrow: 1,
-                            justifyContent: "left",
-                            display: "flex",
-                            m: 1
-                        }}
-                    >
-                        <Typography variant="caption" color="initial">
-                            Copyright ©2022. Limited
-                        </Typography>
-                    </Box>
-                </Container>
-            </Paper>
-        </div>
-    )
-}
+        <MDBFooter position="fixed" color="blue" className="footer">
+            <MDBContainer fluid className="text-center text-md-left">
+                <MDBRow>
+                    <MDBCol md="12">
+                        <h1 className="title">VERTEX BANK GROUP</h1>
+                        <h3>
+                            The bank where the customer comes first
+                        </h3>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer>
+        </MDBFooter>
+    );
+};
 
 export default Footer;
