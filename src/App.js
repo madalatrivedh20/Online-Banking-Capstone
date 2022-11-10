@@ -1,7 +1,6 @@
 
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
-
 import Login from './components/Login';
 import Registration from './components/Registration';
 import Home from './components/Home';
