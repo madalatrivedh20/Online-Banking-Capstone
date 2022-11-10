@@ -1,4 +1,5 @@
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightLong, faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 
 import '../style/Login.css';
 import { React, useState, useEffect } from 'react';

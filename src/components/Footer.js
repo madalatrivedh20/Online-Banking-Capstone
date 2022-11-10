@@ -5,9 +5,8 @@ import Image from "mui-image";
 const Footer = () => {
     return (
         <div>
-            <Paper sx={{
-                
-                width: '100%',
+            {/* <Paper sx={{
+                // marginTop: 'calc(10% + 60px)',
                 position: 'fixed',
                 bottom: 0,
                 width: '100%'
@@ -37,7 +36,7 @@ const Footer = () => {
                         </Typography>
                     </Box>
                 </Container>
-            </Paper>
+            </Paper> */}
         </div>
     );
 };
