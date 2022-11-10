@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import validator from 'validator';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';import FormHeader from './FormHeader';
+import { useNavigate } from 'react-router-dom'; import FormHeader from './FormHeader';
 
 import useAppContext from '../AppStateContext';
 import { changeATMPIN } from '../service/api';
 
 //Function called to change the pin of the user logged in
+
 const ChangePin = () => {
   const navigate = useNavigate();
   const { user } = useAppContext();
@@ -25,7 +26,7 @@ const ChangePin = () => {
   //Validate the entered pin
   const checkValidations = (string) =>
     [validator.isNumeric, (str) => str.length === 4].reduce((preVal, func) => preVal && func(string), true);
-    
+
   //Function invoked on submitting the request. Performs the validation and completes the request
   const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -58,7 +59,7 @@ const ChangePin = () => {
   };
 
   return (
-    
+
     <div className="forms">
       <FormHeader title="Change PIN" />
       <div>

@@ -15,6 +15,9 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate, Link } from 'react-router-dom';
 
+
+// Navbar component that contains the routes to all the components
+
 function Navbar() {
   const auth = useAppContext();
   const navigate = useNavigate();

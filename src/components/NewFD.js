@@ -6,6 +6,9 @@ import FormHeader from './FormHeader';
 import { createFD } from '../service/api';
 import useAppContext from '../AppStateContext';
 
+
+// Component to create new FD and update the balance
+
 const NewFD = () => {
   const navigate = useNavigate();
   const { user } = useAppContext();
@@ -24,6 +27,9 @@ const NewFD = () => {
 
   const onChangeHandler = (e) => setData({ ...data, [e.target.name]: e.target.value });
 
+
+  // Function invoked on submission of the form with the details of the deposit
+
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     if (!validator.isNumeric(data.accNo)) return toast.error("Invalid Account Number");
@@ -31,7 +37,7 @@ const NewFD = () => {
     if (!data.FDPeriod) return toast.error("Please select FD Period");
     if (!validator.isNumeric(data.amount)) return toast.error("Invalid Amount");
     if (!checkbox) return toast.error("Please agree to terms and conditions");
-   
+
 
     toastId.current = toast.loading("Creating Fixed Deposit...");
     const { type, render } = await createFD({ ...data, userId: user.id, accno: user.accno, acctype: user.acctype });

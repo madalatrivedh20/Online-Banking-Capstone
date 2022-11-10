@@ -7,6 +7,8 @@ import { transferFunds, getCurrentUser } from '../service/api';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
+//Component to transfer funds and update the balance of the user
+
 const TransferFunds = () => {
   const navigate = useNavigate();
   const { user, allUsers } = useAppState();
@@ -39,6 +41,8 @@ const TransferFunds = () => {
     const user = allUsers.find(user => user.id === Number(e.target.value));
     setData({ ...data, beneficiary: user.id, beneficiaryAccNo: user.accno, beneficiaryIFSC: "IFSC", beneficiaryAccType: user.acctype });
   };
+
+  //Function invoked on submission of the form with the transfer details
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -76,7 +80,7 @@ const TransferFunds = () => {
   return (
     <div className="forms" >
       <FormHeader title="Transfer Funds" />
-      <div style={{"overflow":"scroll"}}>
+      <div style={{ "overflow": "scroll" }}>
         <form onSubmit={onSubmitHandler}>
           <div className="row">
             <label>From Account Number</label>

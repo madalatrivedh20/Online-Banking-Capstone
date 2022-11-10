@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRightLong, faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
+//Importing all the necessary modules
 
 import '../style/Login.css';
 import { React, useState, useEffect } from 'react';
@@ -25,7 +24,7 @@ const FormHeader = props => (
 
 function Login() {
 
-  const { setIsAuthenticated, setUser, issocialAuthenticated, setIssocialAuthenticated } = useAppContext();
+  const { setIsAuthenticated, setUser, setIssocialAuthenticated } = useAppContext();
 
   const navigate = useNavigate();
 
@@ -60,6 +59,7 @@ function Login() {
   const go_provider = new GoogleAuthProvider();
   const fb_provider = new FacebookAuthProvider();
 
+  //Function invoked on sign-in of google
   const signInWithGoogle = () => {
     signInWithPopup(auth, go_provider)
       .then((result) => {
@@ -67,10 +67,8 @@ function Login() {
         const email = result.user.email;
         const profilePic = result.user.photoURL;
 
-        localStorage.setItem("name", name);
-        localStorage.setItem("email", email);
-        localStorage.setItem("profilePic", profilePic);
         setIssocialAuthenticated(true);
+        toast.success("Welcome", name);
         navigate('/')
           ;
       })
@@ -78,6 +76,8 @@ function Login() {
         console.log(error);
       });
   };
+
+  //Fetching all the users data
 
   const getUsers = async () => {
     try {
@@ -98,6 +98,7 @@ function Login() {
 
   const submitHandler = e => {
 
+    // Validates email and checks if the password and email of the user matches
     e.preventDefault();
     let email_str = data['email'][0];
     let password_str = data['password'][0];
@@ -157,8 +158,8 @@ function Login() {
           <div id="button" className="row">
             <div style={{ "textAlign": "center", "marginLeft": "0px" }}>
               <ul>
-                <GoogleButton onClick={signInWithGoogle}/>
-          
+                <GoogleButton onClick={signInWithGoogle} />
+
 
               </ul>
             </div>

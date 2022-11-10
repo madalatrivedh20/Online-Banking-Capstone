@@ -6,14 +6,14 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import useAppContext from '../AppStateContext';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 
 
 const handleClick = () => {
     toast.success("Successfully Registered, You will receive a mail with all the details");
-    
+
 };
 
 
@@ -38,11 +38,12 @@ const EventsCard = ({ title, date, body }) => (
 );
 
 
+//Displays list of all the events available for the user to register
 
 const Events = () => (
-   
+
     <div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white'}}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
             <h1>Events</h1>
         </div>
         <Box sx={{ minWidth: 275 }}>

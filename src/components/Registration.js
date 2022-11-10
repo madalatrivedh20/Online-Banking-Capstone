@@ -31,9 +31,7 @@ function Registration() {
     secans: "",
     balance: "30000"
   });
-  const checkemail = '';
-
-  const { username, password } = data;
+  
   let [users, setusers] = useState({});
 
 

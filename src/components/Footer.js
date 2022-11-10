@@ -1,3 +1,6 @@
+
+//Footer component that appears at the end of the page
+
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 

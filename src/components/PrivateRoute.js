@@ -1,3 +1,5 @@
+// To provide access to the user only if he/she logs in through credentials
+
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 
