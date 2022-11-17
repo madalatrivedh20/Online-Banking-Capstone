@@ -3,10 +3,11 @@
 
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import '../style/Footer.css';
 
 const Footer = () => {
     return (
-        <MDBFooter position="fixed" color="blue" className="footer">
+        /* <MDBFooter position="fixed" color="blue" className="footer" >
             <MDBContainer fluid className="text-center text-md-left">
                 <MDBRow>
                     <MDBCol md="12">
@@ -17,7 +18,12 @@ const Footer = () => {
                     </MDBCol>
                 </MDBRow>
             </MDBContainer>
-        </MDBFooter>
+        </MDBFooter> */
+        <div className="footer">
+        <h2>VERTEX BANK GROUP</h2>
+        <p>The bank where the customer comes first.</p>
+        </div>
+
     );
 };
 

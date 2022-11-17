@@ -24,7 +24,7 @@ const FormHeader = props => (
 
 function Login() {
 
-  const { setIsAuthenticated, setUser, setIssocialAuthenticated } = useAppContext();
+  const { setIsAuthenticated, setUser, setIssocialAuthenticated,allUsers } = useAppContext();
 
   const navigate = useNavigate();
 
@@ -32,8 +32,6 @@ function Login() {
     email: "",
     password: ""
   });
-
-  let [users, setusers] = useState({});
 
 
   const changeHandler = e => {
@@ -77,24 +75,6 @@ function Login() {
       });
   };
 
-  //Fetching all the users data
-
-  const getUsers = async () => {
-    try {
-      const response = await fetch("http://localhost:3000/users/");
-      const jsonData = await response.json();
-
-      localStorage.setItem("users", JSON.stringify(jsonData));
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
-  useEffect(() => {
-    getUsers();
-    const users_ls = JSON.parse(localStorage.getItem("users"));
-    setusers(users_ls);
-  }, []);
 
   const submitHandler = e => {
 
@@ -105,6 +85,8 @@ function Login() {
     let checkemail = (validator.isEmail(email_str));
 
     function checkemailpassofuser(obj) {
+      console.log("entered checkemail")
+      console.log(obj)
       let flag = 0;
       if (obj.email === email_str && obj.password === password_str) {
         flag = 1;
@@ -119,7 +101,8 @@ function Login() {
     }
 
     if (checkemail) {
-      const result = users.filter(checkemailpassofuser);
+      
+      const result = allUsers.filter(checkemailpassofuser);
 
       if (result[0]) {
 

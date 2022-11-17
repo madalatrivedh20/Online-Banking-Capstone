@@ -10,7 +10,7 @@ export const getCurrentUser = async (userId) => {
 //Api to fetch all the users registerd with the bank
 export const getAllUsers = async () => {
   const response = await (await fetch(`http://localhost:3000/users`)).json();
-  const allUsers = response.map(({ id, accno, acctype, firstname, lastname }) => ({ id, accno, acctype, firstname, lastname }));
+  const allUsers = response.map(({ id, accno, acctype, firstname, lastname,email,password }) => ({ id, accno, acctype, firstname, lastname,email,password }));
   return allUsers;
 };
 

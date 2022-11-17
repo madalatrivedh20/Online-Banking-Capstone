@@ -70,11 +70,14 @@ main > article > .articlesection {
 main > article > .articledescriptionsection,
 main > article > .articlenavsection {
   border-left: 1px solid var(--border-color);
+  text-align: left;
 }
 
 main > article > .articletitlesection,
 main > article > .articlenavsection {
   border-top: 1px solid var(--border-color);
+  padding-bottom: 200px;
+  padding-top: 200px;
 }
 
 main > article > .articleimagesection {
